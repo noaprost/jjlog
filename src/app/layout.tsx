@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="flex justify-between p-6">
-          <Link href="/" className="text-xl font-semibold">JJ&apos;s Blog</Link>
+          <Link href="/" className="text-lg font-semibold">
+            JJ&apos;s Blog
+          </Link>
           <ul className="flex w-96 justify-around">
             <li>
               <Link href="/">home</Link>
@@ -36,7 +38,7 @@ export default function RootLayout({
           </ul>
         </header>
         <section className="h-screen">{children}</section>
-        <footer className="text-center p-2">
+        <footer className="text-center p-2 text-sm">
           ©️noaprost | All Right Reserved.
         </footer>
       </body>
