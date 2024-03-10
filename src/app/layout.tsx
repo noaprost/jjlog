@@ -37,7 +37,7 @@ export default function RootLayout({
             </li>
           </ul>
         </header>
-        <section className="h-screen">{children}</section>
+        <section className="h-full">{children}</section>
         <footer className="text-center p-2 text-sm">
           ©️noaprost | All Right Reserved.
         </footer>
