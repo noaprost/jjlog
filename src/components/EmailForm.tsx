@@ -10,7 +10,7 @@ export default function EmailForm() {
       <label htmlFor="email" className="text-xs mb-1">
         Your Email
       </label>
-      <input type="text" id="email" className="mb-2 rounded-lg" />
+      <input type="email" id="email" className="mb-2 rounded-lg" />
       <label htmlFor="subject" className="text-xs mb-1">
         Subject
       </label>

@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 export default function ContactPage() {
   return (
     <div className="flex flex-col items-center">
-      <h2 className="font-bold text-lg mb-2">Contact us!</h2>
+      <h2 className="font-bold text-xl mb-2">Contact us!</h2>
       <p className="text-xs mb-1">kangjiwon1850@gmail.com</p>
       <p className="text-xs mb-4">kimjc@gmail.com</p>
       <div className="flex mb-2">
