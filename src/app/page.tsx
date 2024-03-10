@@ -9,7 +9,7 @@ export default async function Home() {
     <div>
       <Profile />
       <h1 className="text-xl font-bold pl-12 pt-12 pb-4">Featured Posts</h1>
-      <div className="grid grid-cols-4 grid-rows-2 gap-y-8 justify-center px-12">
+      <div className="grid grid-cols-4 grid-rows-2 gap-y-8 px-12">
         {postCards
           .filter((card) => card.featured)
           .map((card) => (
