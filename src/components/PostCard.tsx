@@ -22,7 +22,7 @@ export default function PostCard({
 }: Props) {
   const router = useRouter();
   const handleClick = () => {
-    router.push(`/posts/${id}`);
+    router.push(`/posts/1`);
   };
   return (
     <div

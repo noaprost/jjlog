@@ -16,3 +16,13 @@ export async function getPostCard(): Promise<PostCard[]> {
   const data = await fs.readFile(filePath, "utf-8");
   return JSON.parse(data);
 }
+
+export async function getPostsByCategory(
+  category: string
+): Promise<PostCard[]> {
+  const posts = await getPostCard();
+  if (category === "All Posts") {
+    return posts;
+  }
+  return posts.filter((post) => post.category === category);
+}
