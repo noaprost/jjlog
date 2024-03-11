@@ -12,7 +12,7 @@ export default async function PostsByCategory({ category }: Props) {
     <div
       className={`grid grid-cols-3 grid-rows-${
         len > 2 ? len : 2
-      } gap-7 justify-center py-8 pl-8`}
+      } gap-7 py-8 pl-8`}
     >
       {postCards.map((card) => (
         <PostCard
