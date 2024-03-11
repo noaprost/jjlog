@@ -1,19 +1,19 @@
-import PostsByCategory from "@/components/PostsByCategory";
+import FilterablePosts from "@/components/FilterablePosts";
+import { getPostCard } from "@/service/posts";
 
-export default function PostsPage() {
+export default async function PostsByCategory() {
+  const postCards = await getPostCard();
+  const filterd = postCards.map((post) => post.category);
+  let categoryies: string[] = [];
+  filterd.map((item) => {
+    if (!categoryies.includes(item)) {
+      categoryies.push(item);
+    }
+  });
+
   return (
-    <div className="flex h-max">
-      <PostsByCategory category="backend" />
-      <div className="w-1/4 h-72 flex flex-col justify-evenly items-center mt-24 mx-auto">
-        <p className="font-bold underline underline-offset-8">Category</p>
-        <p className="cursor-pointer font-light hover:scale-110">All Posts</p>
-        <p className="cursor-pointer font-light hover:scale-110">algorithm</p>
-        <p className="cursor-pointer font-light hover:scale-110 text-orange-400">
-          backend
-        </p>
-        <p className="cursor-pointer font-light hover:scale-110">frontend</p>
-        <p className="cursor-pointer font-light hover:scale-110">study</p>
-      </div>
+    <div>
+      <FilterablePosts posts={postCards} categories={categoryies} />
     </div>
   );
 }
