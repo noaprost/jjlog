@@ -36,7 +36,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
           />
         ))}
       </div>
-      <div className="mx-auto">
+      <div className="">
         <Category
           categories={[ALL_POSTS, ...categories]}
           selected={selected}
