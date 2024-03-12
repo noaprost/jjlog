@@ -26,3 +26,8 @@ export async function getPostsByCategory(
   }
   return posts.filter((post) => post.category === category);
 }
+
+export async function getPostById(id: string): Promise<PostCard> {
+  const posts = await getPostCard();
+  return posts.filter((post) => post.id === id)[0];
+}
