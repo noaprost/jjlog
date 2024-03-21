@@ -8,7 +8,7 @@ type Props = {
 
 export default function Category({ categories, selected, onClick }: Props) {
   return (
-    <section className="mt-24">
+    <section className="mt-24 ml-52">
       <p className="font-bold underline underline-offset-8">Category</p>
       <ul className="h-72 flex flex-col justify-evenly items-center">
         {categories.map((category) => (
