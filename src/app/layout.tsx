@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Imprima } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import DarkModeToggleButton from "@/components/DarkModeToggleButton";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Imprima({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jjlog",
