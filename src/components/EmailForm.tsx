@@ -57,7 +57,7 @@ export default function EmailForm() {
     <>
       {banner && (
         <div
-          className={`px-2 py-1 mb-3 text-black text-sm font-semibold rounded-xl w-72 text-center ${
+          className={`px-3 py-1 mb-3 text-black text-sm font-semibold rounded-xl w-fit text-center ${
             banner.state == "error" ? "bg-red-300" : "bg-green-300"
           }`}
         >
