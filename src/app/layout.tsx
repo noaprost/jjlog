@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import DarkModeToggleButton from "@/components/DarkModeToggleButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,9 @@ export default function RootLayout({
             </li>
             <li>
               <Link href="/contact">contact</Link>
+            </li>
+            <li>
+              <DarkModeToggleButton />
             </li>
           </ul>
         </header>

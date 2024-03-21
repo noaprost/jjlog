@@ -68,7 +68,7 @@ export default function EmailForm() {
       )}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col bg-neutral-900 p-4 w-96 rounded-xl"
+        className="flex flex-col bg-neutral-200 dark:bg-neutral-900 p-4 w-96 rounded-xl"
       >
         <label htmlFor="email" className="text-xs mb-1">
           Your Email
@@ -81,7 +81,7 @@ export default function EmailForm() {
           autoFocus
           value={form.email}
           onChange={handleChange}
-          className="mb-2 rounded-lg text-sm p-1 text-black"
+          className="mb-2 rounded-lg text-sm p-1 text-black outline-none"
         />
         <label htmlFor="subject" className="text-xs mb-1">
           Subject
@@ -93,7 +93,7 @@ export default function EmailForm() {
           required
           value={form.subject}
           onChange={handleChange}
-          className="mb-2 rounded-lg text-sm p-1 text-black"
+          className="mb-2 rounded-lg text-sm p-1 text-black outline-none"
         />
         <label htmlFor="message" className="text-xs mb-1">
           Message
@@ -105,7 +105,7 @@ export default function EmailForm() {
           rows={10}
           value={form.message}
           onChange={handleChange}
-          className="rounded-lg text-sm p-1 text-black"
+          className="rounded-lg text-sm p-1 text-black outline-none"
         />
         <button
           type="submit"

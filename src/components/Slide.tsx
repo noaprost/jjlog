@@ -29,7 +29,7 @@ type Props = {
 
 export default function Slide({ children }: Props) {
   return (
-    <Carousel infinite autoPlay responsive={responsive}>
+    <Carousel className="pt-1 pb-3" infinite autoPlay responsive={responsive}>
       {children}
     </Carousel>
   );
