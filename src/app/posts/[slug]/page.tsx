@@ -12,15 +12,17 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
   const post = await getPostById(slug);
   return (
     <div className="mx-24 my-6">
-      <div className="bg-gradient-to-r from-orange-500 to-orange-900 w-full h-60 rounded-t-2xl"></div>
-      <div className="p-3 bg-neutral-900 rounded-b-2xl">
+      <div className="bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 w-full h-60 rounded-t-2xl"></div>
+      <div className="p-6 bg-neutral-100 dark:bg-neutral-900 rounded-b-2xl">
         <div className="flex justify-end mt-4">
-          <FaRegCalendarAlt className="text-orange-300 mr-2" />
-          <p className="text-end text-sm text-orange-300">{post.day}</p>
+          <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />
+          <p className="text-end text-sm text-orange-500 dark:text-orange-300">
+            {post.day}
+          </p>
         </div>
         <h1 className="font-bold text-2xl">{post.title}</h1>
         <p className="text-sm mt-2">{post.description}</p>
-        <div className="w-28 h-1 bg-gradient-to-r from-orange-500 to-orange-900 mt-2"></div>
+        <div className="w-28 h-1 bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 mt-2"></div>
         <div className="flex flex-col justify-evenly p-3">
           <p className="text-wrap my-6 text-sm">
             Spring은 현재 가장 인기 있는 자바 기반의 오픈 소스 프레임워크 중

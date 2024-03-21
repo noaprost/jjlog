@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div>
       <Profile />
-      <div className=" bg-neutral-900 h-64 p-6 flex flex-col justify-between items-center mt-6">
+      <div className="bg-neutral-200 dark:bg-neutral-900 h-64 p-6 flex flex-col justify-between items-center mt-6">
         <div className="flex flex-col items-center">
           <h2 className="font-semibold text-md mb-1">Who are we?</h2>
           <p className="text-sm">꿈을 향해 코딩하는 개발자</p>
