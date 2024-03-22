@@ -1,3 +1,4 @@
+import { metadata } from "./../app/layout";
 import path from "path";
 import { promises as fs } from "fs";
 
@@ -9,6 +10,11 @@ export type PostCard = {
   description: string;
   category: string;
   featured: boolean;
+};
+
+export type PostData = PostCard & {
+  next: PostCard | null;
+  prev: PostCard | null;
 };
 
 export async function getPostCard(): Promise<PostCard[]> {
@@ -24,10 +30,19 @@ export async function getPostsByCategory(
   if (category === "All Posts") {
     return posts;
   }
+
   return posts.filter((post) => post.category === category);
 }
 
-export async function getPostById(id: string): Promise<PostCard> {
+export async function getPostById(id: string): Promise<PostData> {
   const posts = await getPostCard();
-  return posts.filter((post) => post.id === id)[0];
+  const post = posts.filter((post) => post.id === id)[0];
+
+  if (!post) {
+    throw new Error("해당 포스트를 찾을 수 없음");
+  }
+  const index = posts.indexOf(post);
+  const next = index > 0 ? posts[index - 1] : null;
+  const prev = index < posts.length ? posts[index + 1] : null;
+  return { ...post, next, prev };
 }

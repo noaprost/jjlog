@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Imprima } from "next/font/google";
+import { Nanum_Gothic, Hahmlet } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import DarkModeToggleButton from "@/components/DarkModeToggleButton";
 
-const inter = Imprima({ weight: "400", subsets: ["latin"] });
+const inter = Nanum_Gothic({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jjlog",
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <header className="flex justify-between p-6">
           <Link href="/" className="text-lg font-semibold">
-            JJ&apos;s Blog
+            JJlog
           </Link>
           <ul className="flex w-96 justify-around">
             <li>

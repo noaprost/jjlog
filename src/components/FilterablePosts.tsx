@@ -20,7 +20,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
   return (
     <section className="flex">
       <div
-        className={`grid grid-cols-3 grid-rows-${
+        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-${
           len > 2 ? len : 2
         } gap-7 py-8 pl-8`}
       >
@@ -36,7 +36,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
           />
         ))}
       </div>
-      <div className="">
+      <div className="mx-auto">
         <Category
           categories={[ALL_POSTS, ...categories]}
           selected={selected}
