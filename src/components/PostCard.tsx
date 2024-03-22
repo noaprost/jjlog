@@ -36,9 +36,7 @@ export default function PostCard({
         height={100}
         className="w-full h-44 rounded-lg"
       />
-      <div>
-        <p className="text-xs mt-1 text-gray-500">{day}</p>
-      </div>
+      <p className="text-xs mt-1 text-gray-500 self-end">{day}</p>
       <h2 className="font-semibold text-md">{title}</h2>
       <p className="text-xs">{description}</p>
       <p className="text-xs bg-violet-200 dark:bg-violet-900 px-1 rounded-md">
