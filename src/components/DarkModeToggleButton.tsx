@@ -9,8 +9,11 @@ export default function DarkModeToggleButton() {
     setDarkMode((prev) => !prev);
   };
   return (
-    <button className="text-gray-600 dark:text-gray-400" onClick={handleClick}>
-      {darkMode ? "Light Mode" : "Dark Mode"}
+    <button
+      className="text-neutral-700 dark:text-neutral-400"
+      onClick={handleClick}
+    >
+      {darkMode ? "LightMode" : "DarkMode"}
     </button>
   );
 }
