@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Nanum_Gothic, Hahmlet } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
