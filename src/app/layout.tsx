@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="flex justify-between p-5 mx-8">
+        <header className="flex justify-between p-4 mx-8">
           <Link href="/" className="text-lg font-semibold">
             JJlog
           </Link>
