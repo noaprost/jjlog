@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-import { Nanum_Gothic, Hahmlet } from "next/font/google";
+import { Nanum_Gothic, Hahmlet, Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import DarkModeToggleButton from "@/components/DarkModeToggleButton";
 import ProfileImage from "@/components/ProfileImage";
 
-const inter = Nanum_Gothic({ weight: "400", subsets: ["latin"] });
+const inter = Noto_Serif_KR({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jjlog",
