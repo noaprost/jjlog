@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import ProfileImage from "./ProfileImage";
 import Link from "next/link";
 import DarkModeToggleButton from "./DarkModeToggleButton";
-import { useAuthContext } from "@/context/AuthContext";
+import WriteButton from "./WriteButton";
 
 export default function LoginInfo() {
-  const { user, setUser } = useAuthContext();
+  const [user, setUser] = useState<boolean>(true);
   const handleClick = () => {
     setUser(false);
   };
   return (
-    <div className="flex w-52 justify-evenly items-center">
+    <div className="flex w-1/5 justify-evenly items-center">
       {user && (
         <div className="flex justify-evenly items-center">
           <ProfileImage width={32} height={32} />
@@ -22,6 +22,7 @@ export default function LoginInfo() {
       )}
       {!user && <Link href="/login">Login</Link>}
       <DarkModeToggleButton />
+      {user && <WriteButton />}
     </div>
   );
 }

@@ -14,6 +14,7 @@ export default async function PostsByCategory() {
   return (
     <div>
       <FilterablePosts posts={postCards} categories={categoryies} />
+      {/* 페이지 구현 */}
     </div>
   );
 }

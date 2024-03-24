@@ -4,7 +4,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
-export default function Login() {
+export default function LoginPage() {
   const { setUser } = useAuthContext();
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

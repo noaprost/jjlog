@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 
-import {
-  Nanum_Gothic,
-  Hahmlet,
-  Noto_Serif_KR,
-  Orbit,
-  Roboto,
-} from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import LoginInfo from "@/components/LoginInfo";
