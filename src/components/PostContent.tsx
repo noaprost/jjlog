@@ -1,12 +1,20 @@
 import { PostCard } from "@/service/posts";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { LuPen } from "react-icons/lu";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 export default function PostContent({ post }: { post: PostCard }) {
   const { day, title, description } = post;
   return (
-    <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom cursor-pointer">
+    <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
       <div className="bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 w-full h-60"></div>
       <div className="p-6 bg-neutral-100 dark:bg-neutral-900">
+        <div className="flex justify-end items-center">
+          <LuPen className="mr-2 w-4 h-4 cursor-pointer" />
+          <FaRegTrashAlt className="mr-2 w-4 h-4 cursor-pointer" />
+          <FaRegStar className="w-4 h-4 cursor-pointer" />
+        </div>
         <div className="flex justify-end mt-4">
           <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />
           <p className="text-end text-sm text-orange-500 dark:text-orange-300">

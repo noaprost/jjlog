@@ -5,9 +5,11 @@ import { promises as fs } from "fs";
 export type PostCard = {
   id: string;
   image: string;
-  day: string;
+  writer: string;
   title: string;
   description: string;
+  content: string;
+  day: string;
   category: string;
   featured: boolean;
 };
