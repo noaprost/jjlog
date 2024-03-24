@@ -2,6 +2,7 @@
   {
     "id": "1",
     "image": "coding1.jpg",
+    "writer": "지원",
     "day": "2024-03-10",
     "title": "프론트엔드 개발자의 삶",
     "description": "프론트엔트는 어떤 일을 할까",
@@ -11,7 +12,8 @@
   {
     "id": "2",
     "image": "algorithm1.png",
-    "day": "2024-03-10",
+    "writer": "재철",
+    "day": "2024-03-12",
     "title": "알고리즘 문제 잘 푸는 팁",
     "description": "매일 1문제씩 꾸준히 풀기",
     "category": "algorithm",
@@ -20,7 +22,8 @@
   {
     "id": "3",
     "image": "coding2.jpg",
-    "day": "2024-03-10",
+    "writer": "재철",
+    "day": "2024-03-13",
     "title": "백엔드 개발자의 삶",
     "description": "백엔드는 어떤 일을 할까",
     "category": "backend",
@@ -29,7 +32,8 @@
   {
     "id": "4",
     "image": "nextjs.png",
-    "day": "2024-03-10",
+    "writer": "지원",
+    "day": "2024-03-15",
     "title": "Next.js를 공부하며 느낀점",
     "description": "프레임워크의 장단점",
     "category": "study",
@@ -38,7 +42,8 @@
   {
     "id": "5",
     "image": "algorithm2.png",
-    "day": "2024-03-10",
+    "writer": "재철",
+    "day": "2024-03-17",
     "title": "백준 플레티넘이 되기까지",
     "description": "알고리즘이 제일 쉬웠어요",
     "category": "algorithm",
@@ -47,16 +52,18 @@
   {
     "id": "6",
     "image": "spring.png",
-    "day": "2024-03-10",
+    "writer": "재철",
+    "day": "2024-03-19",
     "title": "Spring이 가장 많이 쓰이는 이유",
-    "description": "개인적인 의견 공유",
+    "description": "개인적 의견 공유",
     "category": "backend",
     "featured": true
   },
   {
     "id": "7",
     "image": "study.jpg",
-    "day": "2024-03-10",
+    "writer": "지원 & 재철",
+    "day": "2024-03-21",
     "title": "정보처리기사 합격 후기",
     "description": "어떤 순서로 공부하는게 좋을까",
     "category": "study",

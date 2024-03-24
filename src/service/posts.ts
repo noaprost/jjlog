@@ -6,12 +6,12 @@ export type PostCard = {
   id: string;
   image: string;
   writer: string;
+  day: string;
   title: string;
   description: string;
-  content: string;
-  day: string;
   category: string;
   featured: boolean;
+  content: string;
 };
 
 export type PostData = PostCard & {

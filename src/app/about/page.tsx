@@ -16,8 +16,8 @@ export default function AboutPage() {
         </div>
         <div className="flex flex-col items-center p-1">
           <h2 className="font-semibold text-md mb-1">Skills</h2>
-          <p className="text-sm">Jae Cheol - Java, Spring, JPA</p>
-          <p className="text-sm">Ji Won - React, Typescript, Next.js</p>
+          <p className="text-sm">김재철 - Java, Spring, JPA</p>
+          <p className="text-sm">강지원 - React, Typescript, Next.js</p>
         </div>
       </div>
     </div>
