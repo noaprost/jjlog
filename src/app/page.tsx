@@ -1,6 +1,7 @@
 import PostCard from "@/components/PostCard";
 import Profile from "@/components/Profile";
 import Slide from "@/components/Slide";
+import { useAuthContext } from "@/context/AuthContext";
 import { getPostCard } from "@/service/posts";
 
 export default async function Home() {

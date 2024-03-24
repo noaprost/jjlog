@@ -6,7 +6,7 @@
     "title": "프론트엔드 개발자의 삶",
     "description": "프론트엔트는 어떤 일을 할까",
     "category": "frontend",
-    "featured": true
+    "featured": false
   },
   {
     "id": "2",

@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 
-import { Nanum_Gothic, Hahmlet, Noto_Serif_KR } from "next/font/google";
+import {
+  Nanum_Gothic,
+  Hahmlet,
+  Noto_Serif_KR,
+  Orbit,
+  Roboto,
+} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import DarkModeToggleButton from "@/components/DarkModeToggleButton";
-import ProfileImage from "@/components/ProfileImage";
+import LoginInfo from "@/components/LoginInfo";
+import { AuthContextProvider } from "@/context/AuthContext";
 
-const inter = Noto_Serif_KR({ weight: "400", subsets: ["latin"] });
+const inter = Roboto({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jjlog",
@@ -23,13 +29,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <header className="flex justify-between p-4 mx-8">
           <Link href="/" className="text-lg font-semibold">
-            JJlog
+            JJBlog
           </Link>
-          <div className="flex w-52 justify-evenly items-center">
-            {/* <Link href="/login">login</Link> */}
-            <ProfileImage width={32} height={32} />
-            <DarkModeToggleButton />
-          </div>
+          <LoginInfo />
         </header>
         <hr />
         <section>
@@ -50,7 +52,9 @@ export default function RootLayout({
         </section>
         <hr />
         <br />
-        <section className="h-full">{children}</section>
+        <section className="h-full">
+          <AuthContextProvider>{children}</AuthContextProvider>
+        </section>
         <footer className="text-center p-2 text-sm">
           ©️noaprost | All Right Reserved.
         </footer>
