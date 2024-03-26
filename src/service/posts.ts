@@ -8,8 +8,6 @@ export type PostCard = {
   day: string;
   title: string;
   description: string;
-  content: string;
-  day: string;
   category: string;
   featured: boolean;
 };

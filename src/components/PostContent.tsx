@@ -1,4 +1,4 @@
-import { PostCard, PostData } from "@/service/posts";
+import { PostData } from "@/service/posts";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
