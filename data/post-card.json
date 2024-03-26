@@ -68,5 +68,15 @@
     "description": "어떤 순서로 공부하는게 좋을까",
     "category": "study",
     "featured": false
+  },
+  {
+    "id": "8",
+    "image": "algorithm1.png",
+    "writer": "지원",
+    "day": "2024-03-26",
+    "title": "백준 2557",
+    "description": "파이썬 풀이",
+    "category": "algorithm",
+    "featured": false
   }
 ]
