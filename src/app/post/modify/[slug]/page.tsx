@@ -1,3 +1,5 @@
+import ModifyForm from "@/components/ModifyForm";
+import { PostData, getPostById } from "@/service/posts";
 import React from "react";
 
 type Props = {
@@ -6,6 +8,11 @@ type Props = {
   };
 };
 
-export default function ModifyPage({ params: { slug } }: Props) {
-  return <h1>글을 수정할 수 있는 페이지입니다 : {slug}</h1>;
+export default async function ModifyPage({ params: { slug } }: Props) {
+  const post = await getPostById(slug);
+  return (
+    <>
+      <ModifyForm post={post} />
+    </>
+  );
 }
