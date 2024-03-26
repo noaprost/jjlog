@@ -4,7 +4,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import LoginInfo from "@/components/LoginInfo";
-import { AuthContextProvider } from "@/context/AuthContext";
 
 const inter = Roboto({ weight: "400", subsets: ["latin"] });
 
@@ -46,9 +45,7 @@ export default function RootLayout({
         </section>
         <hr />
         <br />
-        <section className="h-full">
-          <AuthContextProvider>{children}</AuthContextProvider>
-        </section>
+        <section className="h-full">{children}</section>
         <footer className="text-center p-2 text-sm">
           ©️noaprost | All Right Reserved.
         </footer>
