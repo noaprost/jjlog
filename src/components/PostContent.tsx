@@ -1,9 +1,10 @@
 import { PostData } from "@/service/posts";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+
 import ModifiyButton from "./ModifiyButton";
 import MarkDownViewer from "./MarkDownViewer";
+import FeaturedButton from "./FeaturedButton";
 
 export default function PostContent({ post }: { post: PostData }) {
   const { id, writer, day, title, description, featured, content } = post;
@@ -15,11 +16,7 @@ export default function PostContent({ post }: { post: PostData }) {
         <div className="flex justify-end items-center">
           <ModifiyButton id={id} />
           <FaRegTrashAlt className="mr-2 w-4 h-4 cursor-pointer" />
-          <FaStar
-            className={`w-4 h-4 cursor-pointer ${
-              featured ? "text-orange-500" : ""
-            }`}
-          />
+          <FeaturedButton post={post} />
         </div>
         <div className="flex justify-end mt-4">
           <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />
