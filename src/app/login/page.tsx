@@ -1,16 +1,13 @@
 "use client";
 
-import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
 
 export default function LoginPage() {
-  const { setUser } = useAuthContext();
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push("/");
-    setUser(true);
   };
   return (
     <section className="w-full h-screen">
