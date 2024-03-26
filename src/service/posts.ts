@@ -1,5 +1,5 @@
 import path from "path";
-import { promises as fs, readFile, readFileSync } from "fs";
+import { promises as fs, readFileSync } from "fs";
 
 export type PostCard = {
   id: string;

@@ -3,33 +3,21 @@ import { PostData } from "@/service/posts";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
-export default function NewPostPage() {
-  const [post, setPost] = useState<PostData>({
-    id: "",
-    image: "",
-    writer: "",
-    day: "",
-    title: "",
-    description: "",
-    category: "",
-    content: "",
-    featured: false,
-    next: null,
-    prev: null,
-  });
+export default function ModifyForm({ post }: { post: PostData }) {
+  const [modifyPost, setModifyPost] = useState<PostData>(post);
   const router = useRouter();
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 데이터 전송하면
-    // 거기서 id 추가 해서 DB 업데이트
+    // 데이터 전송하면 DB 업데이트
     console.log(post);
-    router.push("/posts");
+    router.push(`/posts/${modifyPost.id}`);
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setPost((post) => ({ ...post, [name]: value }));
+    setModifyPost((post) => ({ ...post, [name]: value }));
   };
   return (
     <form
@@ -43,7 +31,7 @@ export default function NewPostPage() {
         placeholder="제목을 입력하세요"
         name="title"
         type="text"
-        value={post.title || ""}
+        value={modifyPost.title}
         onChange={handleChange}
       />
       <input
@@ -52,7 +40,7 @@ export default function NewPostPage() {
         placeholder="글에 대한 설명을 한줄로 입력해주세요"
         name="description"
         type="text"
-        value={post.description || ""}
+        value={modifyPost.description}
         onChange={handleChange}
       />
       <input
@@ -61,7 +49,7 @@ export default function NewPostPage() {
         placeholder="작성자를 입력하세요"
         name="writer"
         type="text"
-        value={post.writer || ""}
+        value={modifyPost.writer}
         onChange={handleChange}
       />
       <input
@@ -70,7 +58,7 @@ export default function NewPostPage() {
         type="file"
         name="image"
         placeholder="사진을 선택하세요"
-        value={post.image || ""}
+        value={modifyPost.image || ""}
         onChange={handleChange}
       />
       <div className="mb-4">
@@ -79,7 +67,7 @@ export default function NewPostPage() {
           id="category"
           className="w-min outline-none"
           name="category"
-          value={post.category || ""}
+          value={modifyPost.category}
           onChange={handleChange}
         >
           <option>frontend</option>
@@ -94,11 +82,11 @@ export default function NewPostPage() {
         className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4"
         placeholder="내용 / 마크다운 문법을 사용해 입력해주세요"
         rows={20}
-        value={post.content || ""}
+        value={modifyPost.content}
         onChange={handleChange}
       />
       <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md">
-        등록하기
+        수정하기
       </button>
     </form>
   );
