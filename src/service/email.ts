@@ -32,5 +32,5 @@ export async function sendEmail({ email, subject, message }: EmailData) {
     `,
   };
 
-  return transporter.sendMail(mailData);
+  return await transporter.sendMail(mailData);
 }
