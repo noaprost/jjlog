@@ -46,12 +46,14 @@ export default function FilterablePosts({ posts, categories }: Props) {
           />
         </div>
       </div>
-      <div className="flex mx-auto w-1/5 justify-between py-12">
+      <div className="flex mx-auto w-max justify-between py-12">
         <button className="text-orange-500">{`\<`} 이전</button>
         {pages.map((item) => (
-          <button key={item}>{item}</button>
+          <button className="ml-9" key={item}>
+            {item}
+          </button>
         ))}
-        <button className="text-orange-500">다음 {`\>`}</button>
+        <button className="text-orange-500 ml-9">다음 {`\>`}</button>
       </div>
     </section>
   );
