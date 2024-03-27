@@ -27,7 +27,7 @@
     "title": "백엔드 개발자의 삶",
     "description": "백엔드는 어떤 일을 할까",
     "category": "backend",
-    "featured": true
+    "featured": false
   },
   {
     "id": "4",
@@ -36,7 +36,7 @@
     "day": "2024-03-15",
     "title": "Next.js를 공부하며 느낀점",
     "description": "프레임워크의 장단점",
-    "category": "study",
+    "category": "frontend",
     "featured": false
   },
   {
@@ -77,7 +77,7 @@
     "title": "백준 2557",
     "description": "Hello World!",
     "category": "algorithm",
-    "featured": true
+    "featured": false
   },
   {
     "id": "9",
@@ -97,6 +97,6 @@
     "title": "백준 2293",
     "description": "동전 1",
     "category": "algorithm",
-    "featured": false
+    "featured": true
   }
 ]

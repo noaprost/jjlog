@@ -20,7 +20,6 @@ export default function NewPostPage() {
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 전체 포스트 개수 받아와서 +1 해서 id 설정
     // 데이터 전송 후 DB에 추가
     console.log(post);
     router.push("/posts");
@@ -33,11 +32,11 @@ export default function NewPostPage() {
   };
   return (
     <form
-      className="flex flex-col mx-16 p-4 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
+      className="flex flex-col mt-12 mx-32 px-16 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
       onSubmit={handleSubmit}
     >
       <input
-        className="text-2xl font-semibold outline-none p-3 mb-4 dark:bg-black rounded-md"
+        className="text-2xl font-semibold outline-none p-3 mt-12 dark:bg-black rounded-md"
         required
         autoFocus
         placeholder="제목을 입력하세요"
@@ -46,8 +45,10 @@ export default function NewPostPage() {
         value={post.title || ""}
         onChange={handleChange}
       />
+      <hr className="mb-6" />
+      <br />
       <input
-        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
+        className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md"
         required
         placeholder="글에 대한 설명을 한줄로 입력해주세요"
         name="description"
@@ -55,17 +56,9 @@ export default function NewPostPage() {
         value={post.description || ""}
         onChange={handleChange}
       />
+      {/* 작성자 readonly로 추가 */}
       <input
-        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
-        required
-        placeholder="작성자를 입력하세요"
-        name="writer"
-        type="text"
-        value={post.writer || ""}
-        onChange={handleChange}
-      />
-      <input
-        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
+        className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         required
         type="file"
         name="image"
@@ -73,11 +66,11 @@ export default function NewPostPage() {
         value={post.image || ""}
         onChange={handleChange}
       />
-      <div className="mb-4">
-        <label htmlFor="category">카테고리 :</label>
+      <div className="mb-8">
+        <label htmlFor="category">카테고리 : </label>
         <select
           id="category"
-          className="w-min outline-none dark:bg-neutral-900 rounded-md"
+          className="w-min border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md p-1"
           name="category"
           value={post.category || ""}
           onChange={handleChange}
@@ -91,7 +84,7 @@ export default function NewPostPage() {
       <textarea
         required
         name="content"
-        className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4 dark:bg-neutral-900"
+        className="p-2 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md mb-8 dark:bg-neutral-900"
         placeholder="내용 / 마크다운 문법을 사용해 입력해주세요"
         rows={20}
         value={post.content || ""}
