@@ -20,8 +20,8 @@ export default function NewPostPage() {
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 데이터 전송하면
-    // 거기서 id 추가 해서 DB 업데이트
+    // 전체 포스트 개수 받아와서 +1 해서 id 설정
+    // 데이터 전송 후 DB에 추가
     console.log(post);
     router.push("/posts");
   };

@@ -1,13 +1,12 @@
 import { PostData } from "@/service/posts";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { FaRegTrashAlt } from "react-icons/fa";
-
 import ModifiyButton from "./ModifiyButton";
 import MarkDownViewer from "./MarkDownViewer";
 import FeaturedButton from "./FeaturedButton";
+import PostDeleteButton from "./PostDeleteButton";
 
 export default function PostContent({ post }: { post: PostData }) {
-  const { id, writer, day, title, description, featured, content } = post;
+  const { id, writer, day, title, description, content } = post;
 
   return (
     <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
@@ -15,7 +14,7 @@ export default function PostContent({ post }: { post: PostData }) {
       <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
         <div className="flex justify-end items-center">
           <ModifiyButton id={id} />
-          <FaRegTrashAlt className="mr-2 w-4 h-4 cursor-pointer" />
+          <PostDeleteButton id={id} />
           <FeaturedButton post={post} />
         </div>
         <div className="flex justify-end mt-4">
