@@ -33,17 +33,19 @@ export default async function Home() {
       <h1 className="text-2xl font-bold pl-12 pt-24">You may like</h1>
       <div className="p-12">
         <Slide>
-          {postCards.map((card) => (
-            <PostCard
-              key={card.id}
-              id={card.id}
-              image={card.image}
-              day={card.day}
-              title={card.title}
-              description={card.description}
-              category={card.category}
-            />
-          ))}
+          {postCards
+            .filter((card) => !card.featured)
+            .map((card) => (
+              <PostCard
+                key={card.id}
+                id={card.id}
+                image={card.image}
+                day={card.day}
+                title={card.title}
+                description={card.description}
+                category={card.category}
+              />
+            ))}
         </Slide>
       </div>
     </div>
