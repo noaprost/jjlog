@@ -17,7 +17,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
       ? posts
       : posts.filter((post) => post.category === selected);
   const len = Math.ceil(filterd.length / 3);
-  const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const pages = [1, 2];
   return (
     <section>
       <div className="flex">
