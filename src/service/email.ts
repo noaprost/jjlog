@@ -25,7 +25,6 @@ export async function sendEmail({ email, subject, message }: EmailData) {
     to: process.env.AUTH_USER,
     subject: `[BLOG] ${subject}`,
     html: `
-    <h1>${subject}</h1>
     <div>${message}</div>
     <br/>
     <p>보낸 사람 : ${email}</p>
