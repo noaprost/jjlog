@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import "dotenv/config";
 
 export type EmailData = {
   email: string;
@@ -8,6 +9,8 @@ export type EmailData = {
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
+  port: 465, //587
+  secure: true,
   auth: {
     user: process.env.AUTH_USER,
     pass: process.env.AUTH_PASS,
