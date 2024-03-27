@@ -23,8 +23,8 @@ export default function PostContent({ post }: { post: PostData }) {
             {day}
           </p>
         </div>
-        <h1 className="font-bold text-2xl">{title}</h1>
-        <p className="text-sm mt-2">{description}</p>
+        <h1 className="font-bold text-2xl mb-7">{title}</h1>
+        <p className="text-sm mb-1">{description}</p>
         <div className="flex flex-row justify-between">
           <div className="w-28 h-1 bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 mt-2"></div>
           <p className="text-md font-semibold mx-4">{writer}</p>
