@@ -25,7 +25,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       onSubmit={handleSubmit}
     >
       <input
-        className="text-2xl font-semibold outline-none p-3 mb-4 dark:bg-black rounded-md"
+        className="text-2xl font-semibold outline-none p-3 mb-4 dark:bg-neutral-900 rounded-md"
         required
         autoFocus
         placeholder="제목을 입력하세요"
@@ -43,17 +43,9 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.description}
         onChange={handleChange}
       />
+      {/* 작성자 readonly로 추가 */}
       <input
-        className="p-2 mb-4 outline-none bg-neutral-100 dark:bg-neutral-900 rounded-md"
-        required
-        placeholder="작성자를 입력하세요"
-        name="writer"
-        type="text"
-        value={modifyPost.writer}
-        onChange={handleChange}
-      />
-      <input
-        className="p-2 mb-4 outline-none dark:bg-black rounded-md"
+        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
         required
         type="file"
         name="image"
@@ -64,7 +56,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         <label htmlFor="category">카테고리 :</label>
         <select
           id="category"
-          className="w-min outline-none bg-neutral-100 dark:bg-black rounded-md"
+          className="w-min outline-none bg-neutral-100 dark:bg-neutral-900 rounded-md"
           name="category"
           value={modifyPost.category}
           onChange={handleChange}
@@ -78,7 +70,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       <textarea
         required
         name="content"
-        className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4 bg-neutral-100 dark:bg-neutral-900"
+        className="p-2  outline-neutral-200 outline-offset-1 rounded-md mb-4 bg-neutral-100 dark:bg-neutral-900"
         placeholder="내용 / 마크다운 문법을 사용해 입력해주세요"
         rows={20}
         value={modifyPost.content}

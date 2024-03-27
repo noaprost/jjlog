@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="flex justify-between p-4 mx-8">
-          <Link href="/" className="text-lg font-semibold">
+          <Link href="/" className="text-2xl font-semibold">
             JJBlog
           </Link>
           <LoginInfo />
@@ -29,16 +29,16 @@ export default function RootLayout({
         <hr />
         <section>
           <ul className="flex p-3 justify-center items-center mx-auto">
-            <li className="mr-32">
+            <li className="mr-32 text-xl">
               <Link href="/">home</Link>
             </li>
-            <li className="mr-32">
+            <li className="mr-32 text-xl">
               <Link href="/posts">posts</Link>
             </li>
-            <li className="mr-32">
+            <li className="mr-32 text-xl">
               <Link href="/about">about</Link>
             </li>
-            <li>
+            <li className="text-xl">
               <Link href="/contact">contact</Link>
             </li>
           </ul>
