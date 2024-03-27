@@ -53,6 +53,7 @@ export default function EmailForm() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
+  
   return (
     <>
       {banner && (
