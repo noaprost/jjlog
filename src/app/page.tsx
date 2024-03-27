@@ -5,7 +5,10 @@ import { getPostCard } from "@/service/posts";
 
 export default async function Home() {
   // feture, may like 페이지 구현
-  const postCards = await getPostCard();
+  const notSortedpostCards = await getPostCard();
+  const postCards = notSortedpostCards.sort(
+    (a, b) => Number(b.id) - Number(a.id)
+  );
   return (
     <div>
       <Profile />

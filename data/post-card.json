@@ -1,62 +1,32 @@
 [
   {
-    "id": "10",
-    "image": "algorithm5.png",
+    "id": "1",
+    "image": "coding1.jpg",
     "writer": "지원",
-    "day": "2024-03-26",
-    "title": "백준 2293",
-    "description": "동전 1",
-    "category": "algorithm",
+    "day": "2024-03-10",
+    "title": "프론트엔드 개발자의 삶",
+    "description": "프론트엔트는 어떤 일을 할까",
+    "category": "frontend",
     "featured": false
   },
   {
-    "id": "9",
-    "image": "algorithm4.png",
-    "writer": "지원",
-    "day": "2024-03-26",
-    "title": "백준 10844",
-    "description": "쉬운 계단수",
-    "category": "algorithm",
-    "featured": false
-  },
-  {
-    "id": "8",
-    "image": "algorithm3.png",
-    "writer": "지원",
-    "day": "2024-03-26",
-    "title": "백준 2557",
-    "description": "Hello World!",
+    "id": "2",
+    "image": "algorithm1.png",
+    "writer": "재철",
+    "day": "2024-03-12",
+    "title": "알고리즘 문제 잘 푸는 팁",
+    "description": "매일 1문제씩 꾸준히 풀기",
     "category": "algorithm",
     "featured": true
   },
   {
-    "id": "7",
-    "image": "study.jpg",
-    "writer": "지원 & 재철",
-    "day": "2024-03-21",
-    "title": "정보처리기사 합격 후기",
-    "description": "어떤 순서로 공부하는게 좋을까",
-    "category": "study",
-    "featured": false
-  },
-  {
-    "id": "6",
-    "image": "spring.png",
+    "id": "3",
+    "image": "coding2.jpg",
     "writer": "재철",
-    "day": "2024-03-19",
-    "title": "Spring이 가장 많이 쓰이는 이유",
-    "description": "개인적 의견 공유",
+    "day": "2024-03-13",
+    "title": "백엔드 개발자의 삶",
+    "description": "백엔드는 어떤 일을 할까",
     "category": "backend",
-    "featured": true
-  },
-  {
-    "id": "5",
-    "image": "algorithm2.png",
-    "writer": "재철",
-    "day": "2024-03-17",
-    "title": "백준 플레티넘이 되기까지",
-    "description": "알고리즘이 제일 쉬웠어요",
-    "category": "algorithm",
     "featured": true
   },
   {
@@ -70,33 +40,63 @@
     "featured": false
   },
   {
-    "id": "3",
-    "image": "coding2.jpg",
+    "id": "5",
+    "image": "algorithm2.png",
     "writer": "재철",
-    "day": "2024-03-13",
-    "title": "백엔드 개발자의 삶",
-    "description": "백엔드는 어떤 일을 할까",
-    "category": "backend",
-    "featured": true
-  },
-  {
-    "id": "2",
-    "image": "algorithm1.png",
-    "writer": "재철",
-    "day": "2024-03-12",
-    "title": "알고리즘 문제 잘 푸는 팁",
-    "description": "매일 1문제씩 꾸준히 풀기",
+    "day": "2024-03-17",
+    "title": "백준 플레티넘이 되기까지",
+    "description": "알고리즘이 제일 쉬웠어요",
     "category": "algorithm",
     "featured": true
   },
   {
-    "id": "1",
-    "image": "coding1.jpg",
+    "id": "6",
+    "image": "spring.png",
+    "writer": "재철",
+    "day": "2024-03-19",
+    "title": "Spring이 가장 많이 쓰이는 이유",
+    "description": "개인적 의견 공유",
+    "category": "backend",
+    "featured": true
+  },
+  {
+    "id": "7",
+    "image": "study.jpg",
+    "writer": "지원 & 재철",
+    "day": "2024-03-21",
+    "title": "정보처리기사 합격 후기",
+    "description": "어떤 순서로 공부하는게 좋을까",
+    "category": "study",
+    "featured": false
+  },
+  {
+    "id": "8",
+    "image": "algorithm3.png",
     "writer": "지원",
-    "day": "2024-03-10",
-    "title": "프론트엔드 개발자의 삶",
-    "description": "프론트엔트는 어떤 일을 할까",
-    "category": "frontend",
+    "day": "2024-03-26",
+    "title": "백준 2557",
+    "description": "Hello World!",
+    "category": "algorithm",
+    "featured": true
+  },
+  {
+    "id": "9",
+    "image": "algorithm4.png",
+    "writer": "지원",
+    "day": "2024-03-26",
+    "title": "백준 10844",
+    "description": "쉬운 계단수",
+    "category": "algorithm",
+    "featured": false
+  },
+  {
+    "id": "10",
+    "image": "algorithm5.png",
+    "writer": "지원",
+    "day": "2024-03-26",
+    "title": "백준 2293",
+    "description": "동전 1",
+    "category": "algorithm",
     "featured": false
   }
 ]
