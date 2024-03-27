@@ -103,14 +103,14 @@ export default function EmailForm() {
           id="message"
           name="message"
           required
-          rows={10}
+          rows={8}
           value={form.message}
           onChange={handleChange}
           className="rounded-lg text-sm p-1 text-black outline-none"
         />
         <button
           type="submit"
-          className="bg-orange-400 text-black font-semibold text-sm my-2 rounded-lg p-1"
+          className="bg-orange-400 text-black font-semibold text-sm mt-2 rounded-lg p-1"
         >
           Submit
         </button>
