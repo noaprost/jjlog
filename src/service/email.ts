@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
-import "dotenv/config";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export type EmailData = {
   email: string;
