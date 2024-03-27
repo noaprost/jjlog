@@ -33,11 +33,11 @@ export default function NewPostPage() {
   };
   return (
     <form
-      className="flex flex-col mx-16 p-4 border-neutral-200 border-2 rounded-2xl"
+      className="flex flex-col mx-16 p-4 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
       onSubmit={handleSubmit}
     >
       <input
-        className="text-2xl font-semibold outline-none p-3 mb-4"
+        className="text-2xl font-semibold outline-none p-3 mb-4 dark:bg-black rounded-md"
         required
         autoFocus
         placeholder="제목을 입력하세요"
@@ -47,7 +47,7 @@ export default function NewPostPage() {
         onChange={handleChange}
       />
       <input
-        className="p-2 mb-4 outline-none"
+        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
         required
         placeholder="글에 대한 설명을 한줄로 입력해주세요"
         name="description"
@@ -56,7 +56,7 @@ export default function NewPostPage() {
         onChange={handleChange}
       />
       <input
-        className="p-2 mb-4 outline-none"
+        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
         required
         placeholder="작성자를 입력하세요"
         name="writer"
@@ -65,7 +65,7 @@ export default function NewPostPage() {
         onChange={handleChange}
       />
       <input
-        className="p-2 mb-4 outline-none"
+        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
         required
         type="file"
         name="image"
@@ -77,7 +77,7 @@ export default function NewPostPage() {
         <label htmlFor="category">카테고리 :</label>
         <select
           id="category"
-          className="w-min outline-none"
+          className="w-min outline-none dark:bg-neutral-900 rounded-md"
           name="category"
           value={post.category || ""}
           onChange={handleChange}
@@ -91,13 +91,13 @@ export default function NewPostPage() {
       <textarea
         required
         name="content"
-        className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4"
+        className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4 dark:bg-neutral-900"
         placeholder="내용 / 마크다운 문법을 사용해 입력해주세요"
         rows={20}
         value={post.content || ""}
         onChange={handleChange}
       />
-      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md">
+      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md text-black">
         등록하기
       </button>
     </form>
