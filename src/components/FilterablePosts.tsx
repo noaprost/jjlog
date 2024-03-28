@@ -18,6 +18,9 @@ export default function FilterablePosts({ posts, categories }: Props) {
       : posts.filter((post) => post.category === selected);
   const len = Math.ceil(filterd.length / 3);
   const pages = [1, 2];
+  const next = false;
+  const prev = false;
+
   return (
     <section>
       <div className="flex">
@@ -47,13 +50,13 @@ export default function FilterablePosts({ posts, categories }: Props) {
         </div>
       </div>
       <div className="flex mx-auto w-max justify-between py-12">
-        <button className="text-orange-500">{`\<`} 이전</button>
+        {prev && <button className="text-orange-500">{`\<`} 이전</button>}
         {pages.map((item) => (
-          <button className="ml-9" key={item}>
+          <button className={`ml-9`} key={item}>
             {item}
           </button>
         ))}
-        <button className="text-orange-500 ml-9">다음 {`\>`}</button>
+        {next && <button className="text-orange-500 ml-9">다음 {`\>`}</button>}
       </div>
     </section>
   );
