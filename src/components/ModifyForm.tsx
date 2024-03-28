@@ -43,10 +43,9 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.description}
         onChange={handleChange}
       />
-      {/* 작성자 readonly로 추가 */}
+      <p className="p-2 mb-4">{post.writer}</p>
       <input
         className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
-        required
         type="file"
         name="image"
         placeholder="사진을 선택하세요"
