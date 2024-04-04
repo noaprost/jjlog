@@ -1,10 +1,23 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import PostCard from "@/components/PostCard";
 import Profile from "@/components/Profile";
 import Slide from "@/components/Slide";
 import { Response } from "@/app/page";
+import API from "@/service/axios";
 
-export default function Home({ data }: { data: Response }) {
+export default function Home() {
+  const [data, setData] = useState<Response>({
+    featuredList: [],
+    ymlList: [],
+  });
+  useEffect(() => {
+    async function fetchData() {
+      const res = await API.get("/home");
+      setData(res.data);
+    }
+    fetchData();
+  }, []);
   const { featuredList, ymlList } = data;
   return (
     <div>

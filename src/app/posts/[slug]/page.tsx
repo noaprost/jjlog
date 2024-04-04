@@ -4,7 +4,7 @@ import { getPostById } from "@/service/posts";
 
 type Props = {
   params: {
-    slug: string;
+    slug: number;
   };
 };
 
