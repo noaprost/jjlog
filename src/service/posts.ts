@@ -1,16 +1,28 @@
 import path from "path";
 import { promises as fs, readFileSync } from "fs";
+import API from "./axios";
 
 export type PostCard = {
-  id: string;
-  image: string;
-  writer: string;
-  day: string;
+  id: number;
   title: string;
   description: string;
+  writer: string;
   category: string;
+  day: string;
+  fileName: string;
   featured: boolean;
 };
+
+// export type PostCard = {
+//   id: number;
+//   title: string;
+//   description: string;
+//   writer: string;
+//   category: string;
+//   day: string;
+//   fileName: string;
+//   featured: boolean;
+// };
 
 export type PostData = PostCard & { content: string } & {
   next: PostCard | null;
@@ -34,7 +46,7 @@ export async function getPostsByCategory(
   return posts.filter((post) => post.category === category);
 }
 
-export async function getPostById(id: string): Promise<PostData> {
+export async function getPostById(id: number): Promise<PostData> {
   const filePath = path.join(process.cwd(), "data/post", `${id}.md`);
   const posts = await getPostCard();
   const post = posts.filter((post) => post.id === id)[0];
