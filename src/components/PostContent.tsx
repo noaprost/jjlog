@@ -4,18 +4,45 @@ import ModifiyButton from "./ModifiyButton";
 import MarkDownViewer from "./MarkDownViewer";
 import FeaturedButton from "./FeaturedButton";
 import PostDeleteButton from "./PostDeleteButton";
+import Image from "next/image";
 
-export default function PostContent({ post }: { post: PostData }) {
-  const { id, writer, day, title, description, content } = post;
+type Props = {
+  id: number;
+  writer: string;
+  day: string;
+  title: string;
+  fileName: string;
+  description: string;
+  content: string;
+  featured: boolean;
+};
 
+export default function PostContent({
+  id,
+  writer,
+  day,
+  title,
+  fileName,
+  description,
+  content,
+  featured,
+}: Props) {
   return (
     <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
-      <div className="bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 w-full h-60"></div>
+      <div className="relative w-full h-80 overflow-hidden">
+        <Image
+          className="w-full absolute -top-44"
+          src={fileName}
+          alt={title}
+          width={1400}
+          height={300}
+        />
+      </div>
       <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
         <div className="flex justify-end items-center">
           <ModifiyButton id={id} />
           <PostDeleteButton id={id} />
-          <FeaturedButton post={post} />
+          <FeaturedButton id={id} featured={featured} />
         </div>
         <div className="flex justify-end mt-4">
           <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />

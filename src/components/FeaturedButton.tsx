@@ -1,37 +1,33 @@
 "use client";
-import { PostData } from "@/service/posts";
-import React, { useState } from "react";
+
+import API from "@/service/axios";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-export default function FeaturedButton({ post }: { post: PostData }) {
-  const [featuredPost, setFeaturedPost] = useState<PostData>(post);
-  const pinCount: number = 4;
+export default function FeaturedButton({
+  id,
+  featured,
+}: {
+  id: number;
+  featured: boolean;
+}) {
+  const [data, setData] = useState<boolean>(featured);
+
   const handleClick = () => {
-    if (featuredPost.featured) {
-      setFeaturedPost({
-        ...featuredPost,
-        featured: !featuredPost.featured,
+    async function fetchData() {
+      const res = await API.put(`/posts/featured/${id}`, undefined, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
       });
-      // 데이터 보내서 수정
-      console.log(post);
-    } else {
-      if (pinCount == 4) {
-        alert("pin은 4개까지만 등록할 수 있습니다.");
-      } else {
-        setFeaturedPost({
-          ...featuredPost,
-          featured: !featuredPost.featured,
-        });
-        // 데이터 보내서 수정
-        console.log(post);
-      }
+      console.log(res.data);
+      setData(res.data);
     }
+    fetchData();
   };
   return (
     <FaStar
-      className={`w-4 h-4 cursor-pointer ${
-        featuredPost.featured ? "text-orange-500" : ""
-      }`}
+      className={`w-4 h-4 cursor-pointer ${data ? "text-orange-500" : ""}`}
       onClick={handleClick}
     />
   );

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-export default function PostDeleteButton({ id }: { id: string }) {
+export default function PostDeleteButton({ id }: { id: number }) {
   const router = useRouter();
   const handleClick = () => {
     // id 보내서 삭제 되도록

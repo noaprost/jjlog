@@ -13,16 +13,6 @@ export type PostCard = {
   featured: boolean;
 };
 
-// export type PostCard = {
-//   id: number;
-//   title: string;
-//   description: string;
-//   writer: string;
-//   category: string;
-//   day: string;
-//   fileName: string;
-//   featured: boolean;
-// };
 
 export type PostData = PostCard & { content: string } & {
   next: PostCard | null;
