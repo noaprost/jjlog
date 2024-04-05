@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 type Props = {
-  id: string;
-  image: string;
+  id: number;
+  fileName: string;
   day: string;
   title: string;
   description: string;
@@ -14,7 +14,7 @@ type Props = {
 
 export default function PostCard({
   id,
-  image,
+  fileName,
   day,
   title,
   description,
@@ -30,7 +30,7 @@ export default function PostCard({
       onClick={handleClick}
     >
       <Image
-        src={`/images/${image}`}
+        src={fileName}
         alt="title"
         width={280}
         height={100}

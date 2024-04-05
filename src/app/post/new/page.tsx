@@ -5,8 +5,8 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 
 export default function NewPostPage() {
   const [post, setPost] = useState<PostData>({
-    id: "",
-    image: "",
+    id: 0,
+    fileName: "",
     writer: "",
     day: "",
     title: "",
@@ -63,7 +63,7 @@ export default function NewPostPage() {
         type="file"
         name="image"
         placeholder="사진을 선택하세요"
-        value={post.image || ""}
+        value={post.fileName || ""}
         onChange={handleChange}
       />
       <div className="mb-8">

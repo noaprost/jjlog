@@ -33,7 +33,7 @@ export default function FilterablePosts({ posts, categories }: Props) {
             <PostCard
               key={post.id}
               id={post.id}
-              image={post.image}
+              fileName={post.fileName}
               day={post.day}
               title={post.title}
               description={post.description}
