@@ -2,7 +2,7 @@ import { Html, Head } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html>
       <Head>
         <meta
           http-equiv="Content-Security-Policy"
