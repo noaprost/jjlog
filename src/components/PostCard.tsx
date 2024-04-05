@@ -35,6 +35,7 @@ export default function PostCard({
         width={280}
         height={100}
         className="w-full h-44 rounded-lg"
+        priority
       />
       <p className="text-xs mt-1 text-gray-500 self-end">{day}</p>
       <h2 className="font-semibold text-md">{title}</h2>

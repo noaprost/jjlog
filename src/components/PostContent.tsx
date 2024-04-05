@@ -36,6 +36,7 @@ export default function PostContent({
           alt={title}
           width={1400}
           height={300}
+          priority
         />
       </div>
       <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
