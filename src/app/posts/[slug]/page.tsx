@@ -2,10 +2,10 @@ import PostDetail from "@/components/PostDetail";
 
 type Props = {
   params: {
-    slug: number;
+    slug: string;
   };
 };
 
 export default async function PostDetailPage({ params: { slug } }: Props) {
-  return <PostDetail id={slug} />;
+  return <PostDetail id={Number(slug)} />;
 }
