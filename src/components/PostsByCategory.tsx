@@ -18,7 +18,7 @@ export default async function PostsByCategory({ category }: Props) {
         <PostCard
           key={card.id}
           id={card.id}
-          image={card.image}
+          fileName={card.fileName}
           day={card.day}
           title={card.title}
           description={card.description}

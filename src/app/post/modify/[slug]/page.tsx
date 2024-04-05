@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default async function ModifyPage({ params: { slug } }: Props) {
-  const post = await getPostById(slug);
+  const post = await getPostById(Number(slug));
   return (
     <>
       <ModifyForm post={post} />
