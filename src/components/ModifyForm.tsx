@@ -1,23 +1,70 @@
 "use client";
+import API from "@/service/axios";
 import { PostData } from "@/service/posts";
 import { useRouter } from "next/navigation";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+
+type Request = {
+  title: string;
+  description: string;
+  category: string;
+  content: string;
+};
 
 export default function ModifyForm({ post }: { post: PostData }) {
-  const [modifyPost, setModifyPost] = useState<PostData>(post);
-  const router = useRouter();
+  const [modifyPost, setModifyPost] = useState<Request>({
+    title: "",
+    description: "",
+    category: "",
+    content: "",
+  });
 
+  useEffect(() => {
+    setModifyPost((mpost) => ({
+      ...mpost,
+      title: post.title,
+      description: post.description,
+      category: post.category,
+      content: post.content,
+    }));
+  }, [post.title, post.description, post.category, post.content]);
+
+  const [file, setFile] = useState<File | null>(null);
+  const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 데이터 전송하면 DB 업데이트
-    console.log(post);
-    router.push(`/posts/${modifyPost.id}`);
+    async function fetchData() {
+      const formData = new FormData();
+      if (file === undefined) {
+        setFile(null);
+      }
+      formData.append("file", file as File);
+      formData.append(
+        "postDTO",
+        new Blob([JSON.stringify(modifyPost)], { type: "application/json" })
+      );
+
+      const res = await API.put(`/posts/${post.id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+      console.log(res.data);
+    }
+    fetchData();
+    router.push(`/`);
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setModifyPost((post) => ({ ...post, [name]: value }));
+    const { name, value, files } = e.target;
+    if (name === "file") {
+      console.log(files && files[0]);
+      setFile(files ? files[0] : null);
+      return;
+    }
+    setModifyPost((mpost) => ({ ...mpost, [name]: value }));
   };
   return (
     <form
@@ -47,7 +94,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       <input
         className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
         type="file"
-        name="image"
+        name="file"
         placeholder="사진을 선택하세요"
         onChange={handleChange}
       />

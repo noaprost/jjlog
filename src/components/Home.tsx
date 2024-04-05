@@ -17,7 +17,7 @@ export default function Home() {
       setData(res.data);
     }
     fetchData();
-  }, []);
+  }, [data]);
   const { featuredList, ymlList } = data;
   return (
     <div>

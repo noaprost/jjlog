@@ -1,33 +1,54 @@
 "use client";
-import { PostData } from "@/service/posts";
+import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
+type Request = {
+  title: string;
+  description: string;
+  writer: string;
+  category: string;
+  content: string;
+};
+
 export default function NewPostPage() {
-  const [post, setPost] = useState<PostData>({
-    id: 0,
-    fileName: "",
-    writer: "",
-    day: "",
+  const [post, setPost] = useState<Request>({
     title: "",
     description: "",
+    writer: "재철",
     category: "",
     content: "",
-    featured: false,
-    next: null,
-    prev: null,
   });
+  const [file, setFile] = useState<File | null>();
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 데이터 전송 후 DB에 추가
-    console.log(post);
-    router.push("/posts");
+    async function fetchData() {
+      const formData = new FormData();
+      formData.append("file", file as File);
+      formData.append(
+        "postDTO",
+        new Blob([JSON.stringify(post)], { type: "application/json" })
+      );
+
+      const res = await API.post("/posts", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+    }
+    fetchData();
+    router.push("/");
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target;
+    if (name === "file") {
+      setFile(files && files[0]);
+      return;
+    }
     setPost((post) => ({ ...post, [name]: value }));
   };
   return (
@@ -60,10 +81,10 @@ export default function NewPostPage() {
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         required
+        accept="*.jpg,*.png"
         type="file"
-        name="image"
+        name="file"
         placeholder="사진을 선택하세요"
-        value={post.fileName || ""}
         onChange={handleChange}
       />
       <div className="mb-8">

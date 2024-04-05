@@ -13,6 +13,10 @@ export default function FeaturedButton({
 }) {
   const [data, setData] = useState<boolean>(featured);
 
+  useEffect(() => {
+    setData(featured);
+  }, [featured]);
+
   const handleClick = () => {
     async function fetchData() {
       const res = await API.put(`/posts/featured/${id}`, undefined, {
@@ -20,8 +24,8 @@ export default function FeaturedButton({
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
-      console.log(res.data);
       setData(res.data);
+      console.log(res.data);
     }
     fetchData();
   };

@@ -1,14 +1,50 @@
 "use client";
 
+import API from "@/service/axios";
 import { useRouter } from "next/navigation";
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+
+type Response = {
+  accessToken: string;
+  refreshToken: string;
+};
 
 export default function LoginPage() {
   const router = useRouter();
+  const [data, setData] = useState<Response>({
+    accessToken: "",
+    refreshToken: "",
+  });
+  const [id, setId] = useState<string>("");
+  const [pass, setPass] = useState<string>("");
+
+  const handleIdChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setId(e.target.value);
+  };
+  const handlePassChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setPass(e.target.value);
+  };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    async function fetchData() {
+      const res = await API.post("/generateToken", {
+        mid: id,
+        mpw: pass,
+      });
+      setData(res.data);
+    }
+    fetchData();
     router.push("/");
   };
+
+  useEffect(() => {
+    localStorage.setItem("accessToken", data.accessToken);
+    localStorage.setItem("refreshToken", data.refreshToken);
+  }, [data.accessToken, data.refreshToken]);
+
   return (
     <section className="w-full h-screen">
       <form
@@ -19,6 +55,7 @@ export default function LoginPage() {
           아이디
         </label>
         <input
+          onChange={handleIdChange}
           id="id"
           name="id"
           type="text"
@@ -30,6 +67,7 @@ export default function LoginPage() {
           password
         </label>
         <input
+          onChange={handlePassChange}
           id="pass"
           name="pass"
           type="password"

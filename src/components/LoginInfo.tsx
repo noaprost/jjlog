@@ -1,25 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProfileImage from "./ProfileImage";
 import Link from "next/link";
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import WriteButton from "./WriteButton";
 
 export default function LoginInfo() {
-  const [user, setUser] = useState<boolean>(true);
+  const [token, setToken] = useState<string>();
+
+  useEffect(() => {
+    setToken(localStorage.getItem("accessToken")!);
+  }, [token]);
+
   return (
     <div className="flex w-1/5 justify-evenly items-center">
-      {user && (
+      {token !== "" && (
         <div className="flex justify-evenly items-center">
           <ProfileImage width={32} height={32} />
-          <button className="ml-3" onClick={() => setUser(false)}>
+          <button
+            className="ml-3"
+            onClick={() => {
+              setToken("");
+            }}
+          >
             Logout
           </button>
         </div>
       )}
-      {!user && <Link href="/login">Login</Link>}
+      {token === "" && <Link href="/login">Login</Link>}
       <DarkModeToggleButton />
-      {user && <WriteButton />}
+      {token !== "" && <WriteButton />}
     </div>
   );
 }
