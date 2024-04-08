@@ -10,12 +10,7 @@ import API from "@/service/axios";
 // useEffect로 처음 데이터 받아오고, 나중에는 클릭하면 받아오는걸로
 // 버튼 그려주는게 조금 어렵겠지만 힘내보장
 
-// 파라미터를 카테고리만 받고, post는 이 페이지 내에서 계속 받아오는 걸로
-// useEffect로 처음 데이터 받아오고, 나중에는 클릭하면 받아오는걸로
-// 버튼 그려주는게 조금 어렵겠지만 힘내보장
-
 type Props = {
-  posts: any[];
   categories: string[];
 };
 
@@ -57,6 +52,7 @@ export default function FilterablePosts({ categories }: Props) {
         setEmpty(false);
         setprevCategory(selected);
         setPage(res.data);
+        console.log("post", res.data);
       } else {
         const res = await API.get(`/list?page=${clicked}&category=${selected}`);
         if (res.data.page === 0) {
@@ -68,6 +64,7 @@ export default function FilterablePosts({ categories }: Props) {
           setprevCategory(selected);
           setPage(res.data);
         }
+        console.log("post", res.data);
       }
     }
     fetchData();

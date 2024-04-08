@@ -20,12 +20,15 @@ export default function FeaturedButton({
 
   const handleClick = () => {
     async function fetchData() {
-      const res = await API.put(`/posts/featured/${id}`, undefined, {
+      await API.put(`/posts/featured/${id}`, undefined, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
-        .then((resp) => setData(resp.data))
+        .then((resp) => {
+          setData(resp.data);
+          console.log("featured button", resp);
+        })
         .catch(() => {
           alert("핀 개수를 초과하였습니다 (최대 8개)");
         });

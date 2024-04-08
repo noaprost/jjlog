@@ -2,7 +2,7 @@
 
 import API from "@/service/axios";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 type Response = {
   accessToken: string;
@@ -11,10 +11,6 @@ type Response = {
 
 export default function LoginPage() {
   const router = useRouter();
-  const [data, setData] = useState<Response>({
-    accessToken: "",
-    refreshToken: "",
-  });
   const [id, setId] = useState<string>("");
   const [pass, setPass] = useState<string>("");
 
@@ -34,16 +30,13 @@ export default function LoginPage() {
         mid: id,
         mpw: pass,
       });
-      setData(res.data);
+      console.log("login", res.data);
+      localStorage.setItem("accessToken", res.data.accessToken);
+      localStorage.setItem("refreshToken", res.data.refreshToken);
     }
     fetchData();
-    router.push("/");
+    router.back();
   };
-
-  useEffect(() => {
-    localStorage.setItem("accessToken", data.accessToken);
-    localStorage.setItem("refreshToken", data.refreshToken);
-  }, [data.accessToken, data.refreshToken]);
 
   return (
     <section className="w-full h-screen">

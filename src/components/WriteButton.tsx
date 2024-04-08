@@ -10,7 +10,7 @@ export default function WriteButton() {
   };
   return (
     <button
-      className="bg-orange-400 rounded-full p-2 text-black"
+      className="bg-orange-400 rounded-full p-2 text-black ml-3"
       onClick={handleClick}
     >
       <FaRegPenToSquare className="mx-auto my-auto" />

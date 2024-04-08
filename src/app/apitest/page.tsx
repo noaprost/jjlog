@@ -25,9 +25,7 @@ export default function GenerateToken() {
       localStorage.setItem("refreshToken", data.refreshToken);
     }
     fetchData();
-  }, [data]);
-
-  //const currentUser = [#authentication.principal.username]
+  }, [data.accessToken, data.refreshToken]);
 
   return (
     <div>
