@@ -93,7 +93,8 @@ export default function NewPostPage() {
           id="category"
           className="w-min border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md p-1"
           name="category"
-          value={post.category || ""}
+          required
+          value={post.category || "frontend"}
           onChange={handleChange}
         >
           <option>frontend</option>
