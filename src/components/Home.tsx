@@ -15,15 +15,16 @@ export default function Home() {
     async function fetchData() {
       const res = await API.get("/home");
       setData(res.data);
+      console.log("home", res.data);
     }
     fetchData();
-  }, [data]);
+  }, []);
   const { featuredList, ymlList } = data;
   return (
-    <div>
+    <div className="p-12">
       <Profile />
-      <h1 className="text-2xl font-bold pl-12">Featured Posts</h1>
-      <div className="px-12">
+      <h1 className="text-2xl font-bold pl-12 mb-6">Featured Posts</h1>
+      <div className="px-8">
         <Slide>
           {featuredList.map((card) => (
             <PostCard
@@ -38,8 +39,8 @@ export default function Home() {
           ))}
         </Slide>
       </div>
-      <h1 className="text-2xl font-bold pl-12 pt-24">You may like</h1>
-      <div className="px-12">
+      <h1 className="text-2xl font-bold pl-12 pt-24 mb-6">You may like</h1>
+      <div className="px-8 mb-12">
         <Slide>
           {ymlList.map((card) => (
             <PostCard

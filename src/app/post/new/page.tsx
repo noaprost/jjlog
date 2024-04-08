@@ -37,6 +37,7 @@ export default function NewPostPage() {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
+      console.log("new", res.data);
     }
     fetchData();
     router.push("/");

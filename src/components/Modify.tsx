@@ -22,10 +22,9 @@ export default function Modify({ id }: { id: number }) {
     async function fetchData() {
       const res = await API.get(`/posts/${id}`);
       setData(res.data);
+      console.log("modify", res.data);
     }
     fetchData();
   }, [id]);
-  return (
-    <ModifyForm post={data} />
-  );
+  return <ModifyForm post={data} />;
 }

@@ -30,7 +30,7 @@ export default function PostContent({
     <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
       <div className="relative w-full h-80 overflow-hidden">
         <Image
-          className="w-full absolute -top-44"
+          className="w-full absolute -top-24"
           src={fileName}
           alt={title}
           width={1400}

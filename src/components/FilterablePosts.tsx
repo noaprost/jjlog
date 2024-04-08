@@ -11,7 +11,6 @@ import API from "@/service/axios";
 // 버튼 그려주는게 조금 어렵겠지만 힘내보장
 
 type Props = {
-  posts: any[];
   categories: string[];
 };
 
@@ -53,6 +52,7 @@ export default function FilterablePosts({ categories }: Props) {
         setEmpty(false);
         setprevCategory(selected);
         setPage(res.data);
+        console.log("post", res.data);
       } else {
         const res = await API.get(`/list?page=${clicked}&category=${selected}`);
         if (res.data.page === 0) {
@@ -64,6 +64,7 @@ export default function FilterablePosts({ categories }: Props) {
           setprevCategory(selected);
           setPage(res.data);
         }
+        console.log("post", res.data);
       }
     }
     fetchData();

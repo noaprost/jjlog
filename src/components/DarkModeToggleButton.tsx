@@ -10,7 +10,7 @@ export default function DarkModeToggleButton() {
   };
   return (
     <button
-      className="text-neutral-700 dark:text-neutral-400"
+      className="text-neutral-700 dark:text-neutral-400 ml-3"
       onClick={handleClick}
     >
       {darkMode ? "LightMode" : "DarkMode"}
