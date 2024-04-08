@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import LoginInfo from "@/components/LoginInfo";
+import Head from "next/head";
 
 const inter = Roboto({ weight: "400", subsets: ["latin"] });
 
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
   title: "jjlog",
   description: "my blog!",
 };
+
+<Head>
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="upgrade-insecure-requests"
+  />
+</Head>;
 
 export default function RootLayout({
   children,
