@@ -1,9 +1,9 @@
 import Home from "@/components/Home";
-import { PostCard } from "@/service/posts";
+import { PostInfo } from "@/service/posts";
 
 export type Response = {
-  featuredList: PostCard[];
-  ymlList: PostCard[];
+  featuredList: PostInfo[];
+  ymlList: PostInfo[];
 };
 
 export default async function HomePage() {

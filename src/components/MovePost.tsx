@@ -1,5 +1,5 @@
 "use client";
-import { PostCard } from "@/service/posts";
+import { PostInfo } from "@/service/posts";
 import { useRouter } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
@@ -8,8 +8,8 @@ export default function MovePost({
   prev,
   next,
 }: {
-  prev: PostCard | null;
-  next: PostCard | null;
+  prev: PostInfo | null;
+  next: PostInfo | null;
 }) {
   const router = useRouter();
   const handelClickPrev = () => {

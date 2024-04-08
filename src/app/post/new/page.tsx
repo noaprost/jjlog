@@ -97,7 +97,7 @@ export default function NewPostPage() {
           value={post.category || "frontend"}
           onChange={handleChange}
         >
-          <option>frontend</option>
+          <option selected>frontend</option>
           <option>backend</option>
           <option>algorithm</option>
           <option>study</option>
