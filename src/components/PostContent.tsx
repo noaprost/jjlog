@@ -1,4 +1,3 @@
-import { PostData } from "@/service/posts";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import ModifiyButton from "./ModifiyButton";
 import MarkDownViewer from "./MarkDownViewer";

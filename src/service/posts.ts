@@ -1,8 +1,7 @@
 import path from "path";
 import { promises as fs, readFileSync } from "fs";
-import API from "./axios";
 
-export type PostCard = {
+export type PostInfo = {
   id: number;
   title: string;
   description: string;
@@ -13,13 +12,12 @@ export type PostCard = {
   featured: boolean;
 };
 
-
-export type PostData = PostCard & { content: string } & {
-  next: PostCard | null;
-  prev: PostCard | null;
+export type PostData = PostInfo & { content: string } & {
+  next: PostInfo | null;
+  prev: PostInfo | null;
 };
 
-export async function getPostCard(): Promise<PostCard[]> {
+export async function getPostCard(): Promise<PostInfo[]> {
   const filePath = path.join(process.cwd(), "data", "post-card.json");
   const data = await fs.readFile(filePath, "utf-8");
   return JSON.parse(data);
@@ -27,7 +25,7 @@ export async function getPostCard(): Promise<PostCard[]> {
 
 export async function getPostsByCategory(
   category: string
-): Promise<PostCard[]> {
+): Promise<PostInfo[]> {
   const posts = await getPostCard();
   if (category === "All Posts") {
     return posts;
