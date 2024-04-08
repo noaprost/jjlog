@@ -72,7 +72,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       onSubmit={handleSubmit}
     >
       <input
-        className="text-2xl font-semibold outline-none p-3 mb-4 dark:bg-neutral-900 rounded-md"
+        className="text-2xl font-semibold outline-none p-3 mt-12 dark:bg-black rounded-md"
         required
         autoFocus
         placeholder="제목을 입력하세요"
@@ -81,8 +81,10 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.title}
         onChange={handleChange}
       />
+      <hr className="mb-6" />
+      <br />
       <input
-        className="p-2 mb-4 outline-none bg-neutral-100 dark:bg-neutral-900 rounded-md"
+        className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md"
         required
         placeholder="글에 대한 설명을 한줄로 입력해주세요"
         name="description"
@@ -92,7 +94,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       />
       <p className="p-2 mb-4">{post.writer}</p>
       <input
-        className="p-2 mb-4 outline-none dark:bg-neutral-900 rounded-md"
+        className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         type="file"
         name="file"
         placeholder="사진을 선택하세요"
@@ -102,7 +104,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         <label htmlFor="category">카테고리 :</label>
         <select
           id="category"
-          className="w-min outline-none bg-neutral-100 dark:bg-neutral-900 rounded-md"
+          className="w-min border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md p-1"
           name="category"
           value={modifyPost.category}
           onChange={handleChange}

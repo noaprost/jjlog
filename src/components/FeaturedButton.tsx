@@ -1,6 +1,7 @@
 "use client";
 
 import API from "@/service/axios";
+import { error } from "console";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -23,9 +24,11 @@ export default function FeaturedButton({
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-      });
-      setData(res.data);
-      console.log(res.data);
+      })
+        .then((resp) => setData(resp.data))
+        .catch(() => {
+          alert("핀 개수를 초과하였습니다 (최대 8개)");
+        });
     }
     fetchData();
   };
