@@ -27,6 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </head>
       <body className={inter.className}>
         <header className="flex justify-between p-4 mx-8">
           <Link href="/" className="text-2xl font-semibold">
