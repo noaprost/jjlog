@@ -68,7 +68,7 @@ export default function FilterablePosts({ categories }: Props) {
       }
     }
     fetchData();
-  }, [clicked, selected]);
+  }, [clicked, selected, prevCategory]);
 
   const len = Math.ceil(page.postCard ? page.postCard.length / 3 : 0);
 
