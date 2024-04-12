@@ -1,18 +1,15 @@
 "use client";
 
-import API from "@/service/axios";
+import { useAuthContext } from "@/context/AuthContext";
+import { getTokenAPI } from "@/service/token";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
-
-type Response = {
-  accessToken: string;
-  refreshToken: string;
-};
 
 export default function LoginPage() {
   const router = useRouter();
   const [id, setId] = useState<string>("");
   const [pass, setPass] = useState<string>("");
+  const { updateUser } = useAuthContext();
 
   const handleIdChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -25,17 +22,9 @@ export default function LoginPage() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    async function fetchData() {
-      const res = await API.post("/generateToken", {
-        mid: id,
-        mpw: pass,
-      });
-      console.log("login", res.data);
-      localStorage.setItem("accessToken", res.data.accessToken);
-      localStorage.setItem("refreshToken", res.data.refreshToken);
-    }
-    fetchData();
-    router.back();
+    getTokenAPI({ id, pass });
+    updateUser(true);
+    router.push("/");
   };
 
   return (

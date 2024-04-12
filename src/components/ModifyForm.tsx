@@ -3,6 +3,7 @@ import API from "@/service/axios";
 import { PostData } from "@/service/posts";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 type Request = {
   title: string;
@@ -52,8 +53,19 @@ export default function ModifyForm({ post }: { post: PostData }) {
       });
       console.log(res.data);
     }
-    fetchData();
-    router.push(`/`);
+    fetchData()
+      .then(() => {
+        Swal.fire({
+          text: "수정이 완료되었습니다.",
+          confirmButtonColor: "orange",
+          confirmButtonText: "확인",
+          icon: "success",
+          width: "400px",
+          timer: 1000,
+        });
+        router.push(`/`);
+      })
+      .catch((e) => alert(`수정 실패 :  ${e}`));
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>
