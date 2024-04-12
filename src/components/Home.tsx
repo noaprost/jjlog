@@ -5,12 +5,20 @@ import Profile from "@/components/Profile";
 import Slide from "@/components/Slide";
 import { Response } from "@/app/page";
 import API from "@/service/axios";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [data, setData] = useState<Response>({
     featuredList: [],
     ymlList: [],
   });
+
+  // const router = useRouter();
+
+  // for (let i = 0; i < 2; i++) {
+  //   router.refresh();
+  // }
+
   useEffect(() => {
     async function fetchData() {
       const res = await API.get("/home");
@@ -19,6 +27,7 @@ export default function Home() {
     }
     fetchData();
   }, []);
+
   const { featuredList, ymlList } = data;
   return (
     <div className="p-12">

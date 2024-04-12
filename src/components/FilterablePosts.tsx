@@ -83,6 +83,15 @@ export default function FilterablePosts({ categories }: Props) {
     setClicked(element.value);
   };
 
+  const handlePrevClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setClicked(String(Number(pages[0]) - 10));
+  };
+  const handleNextClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setClicked(String(Number(pages[0]) + 10));
+  };
+
   return (
     <section>
       <div className="flex">
@@ -118,7 +127,11 @@ export default function FilterablePosts({ categories }: Props) {
         </div>
       </div>
       <div className="flex mx-auto w-max justify-between py-12">
-        {page.prev && <button className="text-orange-500">{`\<`} 이전</button>}
+        {page.prev && (
+          <button className="text-orange-500" onClick={handlePrevClick}>
+            {`\<`} 이전
+          </button>
+        )}
         {!empty &&
           pages.map((item) => (
             <button
@@ -131,7 +144,9 @@ export default function FilterablePosts({ categories }: Props) {
             </button>
           ))}
         {page.next && (
-          <button className="text-orange-500 ml-9">다음 {`\>`}</button>
+          <button className="text-orange-500 ml-9" onClick={handleNextClick}>
+            다음 {`\>`}
+          </button>
         )}
       </div>
     </section>

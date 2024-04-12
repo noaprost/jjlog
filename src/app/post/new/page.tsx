@@ -2,6 +2,7 @@
 import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import Swal from "sweetalert2";
 
 type Request = {
   title: string;
@@ -39,8 +40,17 @@ export default function NewPostPage() {
       });
       console.log("new", res.data);
     }
-    fetchData();
-    router.push("/");
+    fetchData().then(() => {
+      Swal.fire({
+        text: "글이 등록되었습니다.",
+        icon: "success",
+        timer: 1000,
+        confirmButtonText: "확인",
+        confirmButtonColor: "orange",
+        width: "400px",
+      });
+      router.push("/");
+    });
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>

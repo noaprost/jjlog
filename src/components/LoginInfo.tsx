@@ -1,41 +1,44 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import ProfileImage from "./ProfileImage";
-import Link from "next/link";
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import WriteButton from "./WriteButton";
+import { useRouter } from "next/navigation";
+import API from "@/service/axios";
+import { useAuthContext } from "@/context/AuthContext";
 
 export default function LoginInfo() {
-  const [token, setToken] = useState<string>("");
+  const { user, updateUser } = useAuthContext();
+  const router = useRouter();
 
-  useEffect(() => {
-    setToken(localStorage.getItem("accessToken")!);
-  }, []);
+  useEffect(() => {}, []);
+
+  const handleLogout = () => {
+    localStorage.setItem("accessToken", "");
+    localStorage.setItem("refreshToken", "");
+    updateUser(false);
+  };
+
+  const handleLogin = () => {
+    router.push("/login");
+  };
 
   return (
     <div className="flex w-max justify-evenly items-center">
-      {token !== "" && (
+      {user ? (
         <div className="flex justify-evenly items-center">
           <ProfileImage width={32} height={32} />
-          <button
-            className="ml-3"
-            onClick={() => {
-              localStorage.setItem("accessToken", "");
-              localStorage.setItem("refreshToken", "");
-              setToken("");
-            }}
-          >
+          <button className="ml-3" onClick={handleLogout}>
             Logout
           </button>
         </div>
-      )}
-      {token === "" && (
-        <Link className="ml-3" href="/login">
+      ) : (
+        <button className="ml-3" onClick={handleLogin}>
           Login
-        </Link>
+        </button>
       )}
       <DarkModeToggleButton />
-      {token !== "" && <WriteButton />}
+      {!user && <WriteButton />}
     </div>
   );
 }
