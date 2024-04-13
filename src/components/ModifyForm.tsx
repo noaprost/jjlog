@@ -130,7 +130,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
       <textarea
         required
         name="content"
-        className="p-2  outline-neutral-200 outline-offset-1 rounded-md mb-4 bg-neutral-100 dark:bg-neutral-900"
+        className="p-2 outline-neutral-200 outline-offset-1 rounded-md mb-4 bg-neutral-100 dark:bg-neutral-900"
         placeholder="내용 / 마크다운 문법을 사용해 입력해주세요"
         rows={20}
         value={modifyPost.content}
