@@ -8,4 +8,5 @@ export async function getTokenAPI({ id, pass }: { id: string; pass: string }) {
   console.log("login", res.data);
   localStorage.setItem("accessToken", res.data.accessToken);
   localStorage.setItem("refreshToken", res.data.refreshToken);
+  sessionStorage.setItem("accessToken", res.data.accessToken);
 }

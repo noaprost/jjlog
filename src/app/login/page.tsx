@@ -22,9 +22,12 @@ export default function LoginPage() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    getTokenAPI({ id, pass });
-    updateUser(true);
-    router.push("/");
+    getTokenAPI({ id, pass })
+      .then(() => {
+        updateUser(true);
+        router.push("/");
+      })
+      .catch(() => alert("아이디 혹은 비밀번호가 틀립니다."));
   };
 
   return (

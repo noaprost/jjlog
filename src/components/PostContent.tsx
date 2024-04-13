@@ -4,6 +4,7 @@ import MarkDownViewer from "./MarkDownViewer";
 import FeaturedButton from "./FeaturedButton";
 import PostDeleteButton from "./PostDeleteButton";
 import Image from "next/image";
+import { useAuthContext } from "@/context/AuthContext";
 
 type Props = {
   id: number;
@@ -26,6 +27,8 @@ export default function PostContent({
   content,
   featured,
 }: Props) {
+  const { getUserName } = useAuthContext();
+  const name = getUserName();
   return (
     <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
       <div className="relative w-full h-64 overflow-hidden">
@@ -39,11 +42,14 @@ export default function PostContent({
         />
       </div>
       <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
-        <div className="flex justify-end items-center">
-          <ModifiyButton id={id} />
-          <PostDeleteButton id={id} />
-          <FeaturedButton id={id} featured={featured} />
-        </div>
+        {name === writer && (
+          <div className="flex justify-end items-center">
+            <ModifiyButton id={id} />
+            <PostDeleteButton id={id} />
+            <FeaturedButton id={id} featured={featured} />
+          </div>
+        )}
+
         <div className="flex justify-end mt-4">
           <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />
           <p className="text-end text-sm text-orange-500 dark:text-orange-300">
