@@ -89,7 +89,7 @@ export default function New({ name }: { name: string }) {
         value={post.description || ""}
         onChange={handleChange}
       />
-      <p className="mb-8">{post.writer}</p>
+      <p className="mb-8 font-semibold">{post.writer}</p>
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         required

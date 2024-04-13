@@ -19,7 +19,7 @@ const AuthContext = createContext<AuthContextType>({
 export const AuthProvider: React.FC<{
   children: ReactNode;
 }> = ({ children }) => {
-  const [user, setUser] = useState<boolean>(true);
+  const [user, setUser] = useState<boolean>(false);
   const [userName, setUserName] = useState<string>("");
 
   function updateUser(user: boolean) {
