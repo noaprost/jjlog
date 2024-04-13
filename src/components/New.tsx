@@ -13,6 +13,7 @@ type Request = {
 };
 
 export default function New({ name }: { name: string }) {
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const [post, setPost] = useState<Request>({
     title: "",
     description: "",
@@ -24,6 +25,9 @@ export default function New({ name }: { name: string }) {
   const router = useRouter();
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmit) {
+      return;
+    }
     async function fetchData() {
       const formData = new FormData();
       formData.append("file", file as File);
@@ -40,6 +44,7 @@ export default function New({ name }: { name: string }) {
       });
       console.log("new", res.data);
     }
+    setIsSubmit(true);
     fetchData().then(() => {
       Swal.fire({
         text: "글이 등록되었습니다.",
@@ -49,6 +54,7 @@ export default function New({ name }: { name: string }) {
         confirmButtonColor: "orange",
         width: "400px",
       });
+      setIsSubmit(false);
       router.push("/");
     });
   };
