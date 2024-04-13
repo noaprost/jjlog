@@ -6,18 +6,13 @@ import Slide from "@/components/Slide";
 import { Response } from "@/app/page";
 import API from "@/service/axios";
 import { useRouter } from "next/navigation";
+import { headers } from "next/headers";
 
 export default function Home() {
   const [data, setData] = useState<Response>({
     featuredList: [],
     ymlList: [],
   });
-
-  // const router = useRouter();
-
-  // for (let i = 0; i < 2; i++) {
-  //   router.refresh();
-  // }
 
   useEffect(() => {
     async function fetchData() {
