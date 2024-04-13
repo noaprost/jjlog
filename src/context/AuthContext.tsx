@@ -48,6 +48,6 @@ export const AuthProvider: React.FC<{
   );
 };
 
-export function useAuthContext() {
+export const useAuthContext = () => {
   return useContext(AuthContext);
-}
+};
