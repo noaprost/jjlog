@@ -4,7 +4,6 @@ import ProfileImage from "./ProfileImage";
 import DarkModeToggleButton from "./DarkModeToggleButton";
 import WriteButton from "./WriteButton";
 import { useRouter } from "next/navigation";
-import API from "@/service/axios";
 import { useAuthContext } from "@/context/AuthContext";
 
 export default function LoginInfo() {
@@ -16,6 +15,7 @@ export default function LoginInfo() {
   const handleLogout = () => {
     localStorage.setItem("accessToken", "");
     localStorage.setItem("refreshToken", "");
+    sessionStorage.setItem("accessToken", "");
     updateUser(false);
   };
 
@@ -38,7 +38,7 @@ export default function LoginInfo() {
         </button>
       )}
       <DarkModeToggleButton />
-      {!user && <WriteButton />}
+      {user && <WriteButton />}
     </div>
   );
 }

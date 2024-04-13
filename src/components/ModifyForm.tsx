@@ -104,7 +104,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.description}
         onChange={handleChange}
       />
-      <p className="p-2 mb-4">{post.writer}</p>
+      <p className="p-2 mb-4 font-semibold">{post.writer}</p>
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         type="file"

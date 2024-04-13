@@ -5,7 +5,7 @@ import API from "@/service/axios";
 import { PostData } from "@/service/posts";
 import { useEffect, useState } from "react";
 
-export default function PostDetail({ id }: { id: number }) {
+export default function PostDetail({ id }: { id: number;}) {
   const [data, setData] = useState<PostData>({
     id: 0,
     title: "",

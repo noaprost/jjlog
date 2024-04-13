@@ -1,4 +1,5 @@
 "use client";
+import { useAuthContext } from "@/context/AuthContext";
 import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
@@ -13,10 +14,12 @@ type Request = {
 };
 
 export default function NewPostPage() {
+  const { getUserName } = useAuthContext();
+  const name = getUserName();
   const [post, setPost] = useState<Request>({
     title: "",
     description: "",
-    writer: "재철",
+    writer: name,
     category: "",
     content: "",
   });
@@ -88,7 +91,7 @@ export default function NewPostPage() {
         value={post.description || ""}
         onChange={handleChange}
       />
-      {/* 작성자 readonly로 추가 */}
+      <p className="mb-8">{post.writer}</p>
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         required
