@@ -67,7 +67,7 @@ export default function NewPostPage() {
   };
   return (
     <form
-      className="flex flex-col mt-12 mx-32 px-16 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
+      className="flex flex-col mt-12 mx-32 px-12 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
       onSubmit={handleSubmit}
     >
       <input
@@ -126,7 +126,7 @@ export default function NewPostPage() {
         value={post.content || ""}
         onChange={handleChange}
       />
-      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md text-black">
+      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md mb-8 text-black">
         등록하기
       </button>
     </form>
