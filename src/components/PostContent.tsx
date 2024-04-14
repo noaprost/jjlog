@@ -30,7 +30,7 @@ export default function PostContent({
   const { getUserName } = useAuthContext();
   const name = getUserName();
   return (
-    <div className="mx-24 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
+    <div className="mx-40 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
       <div className="relative w-full h-64 overflow-hidden">
         <Image
           className="w-full absolute -top-44"
