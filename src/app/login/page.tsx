@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuthContext } from "@/context/AuthContext";
+import API from "@/service/axios";
 import { getTokenAPI } from "@/service/token";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -9,7 +10,7 @@ export default function LoginPage() {
   const router = useRouter();
   const [id, setId] = useState<string>("");
   const [pass, setPass] = useState<string>("");
-  const { updateUser } = useAuthContext();
+  const { updateUser, updateUserName } = useAuthContext();
 
   const handleIdChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -25,6 +26,16 @@ export default function LoginPage() {
     getTokenAPI({ id, pass })
       .then(() => {
         updateUser(true);
+        async function fetchData() {
+          const res = await API.get("/member", {
+            headers: {
+              Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+            },
+          });
+          console.log("member", res.data);
+          updateUserName(res.data.mid);
+        }
+        fetchData();
         router.push("/");
       })
       .catch(() => alert("아이디 혹은 비밀번호가 틀립니다."));
