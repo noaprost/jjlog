@@ -18,7 +18,7 @@ export default function New({ name }: { name: string }) {
     title: "",
     description: "",
     writer: name,
-    category: "",
+    category: "frontend",
     content: "",
   });
   const [file, setFile] = useState<File | null>();
@@ -55,7 +55,7 @@ export default function New({ name }: { name: string }) {
         width: "400px",
       });
       setIsSubmit(false);
-      router.push("/");
+      router.back();
     });
   };
   const handleChange = (
@@ -112,10 +112,10 @@ export default function New({ name }: { name: string }) {
           className="w-min border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 dark:bg-neutral-900 rounded-md p-1"
           name="category"
           required
-          value={post.category || ""}
+          value={post.category}
           onChange={handleChange}
         >
-          <option>frontend</option>
+          <option selected>frontend</option>
           <option>backend</option>
           <option>algorithm</option>
           <option>study</option>

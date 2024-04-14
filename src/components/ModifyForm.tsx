@@ -63,7 +63,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
           width: "400px",
           timer: 1000,
         });
-        router.push(`/`);
+        router.back();
       })
       .catch((e) => alert(`수정 실패 :  ${e}`));
   };
