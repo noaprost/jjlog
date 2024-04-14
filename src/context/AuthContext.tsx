@@ -5,12 +5,14 @@ import React, { ReactNode, createContext, useContext, useState } from "react";
 interface AuthContextType {
   user: boolean;
   updateUser: (user: boolean) => void;
+  updateUserName: (name: string) => void;
   getUserName: () => string;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: false,
   updateUser: (user) => {},
+  updateUserName: (user) => {},
   getUserName: () => {
     return "";
   },
@@ -26,23 +28,18 @@ export const AuthProvider: React.FC<{
     setUser(user);
   }
 
-  function getUserName() {
-    async function fetchData() {
-      const res = await API.get("/member", {
-        headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
-        },
-      });
-      console.log("member", res.data);
-      setUserName(res.data.mid);
-    }
+  function updateUserName(name: string) {
+    setUserName(name);
+  }
 
-    fetchData();
+  function getUserName() {
     return userName;
   }
 
   return (
-    <AuthContext.Provider value={{ user, updateUser, getUserName }}>
+    <AuthContext.Provider
+      value={{ user, updateUser, updateUserName, getUserName }}
+    >
       {children}
     </AuthContext.Provider>
   );
