@@ -24,6 +24,23 @@ export const AuthProvider: React.FC<{
   const [user, setUser] = useState<boolean>(false);
   const [userName, setUserName] = useState<string>("");
 
+  async function fetchData() {
+    await API.get("/member", {
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+      },
+    }).then((data) => {
+      if (data.data.mid !== "anonymous") {
+        console.log("여기");
+        setUser(true);
+      } else {
+        console.log("저기");
+        setUser(false);
+      }
+    });
+  }
+  fetchData();
+
   function updateUser(user: boolean) {
     setUser(user);
   }

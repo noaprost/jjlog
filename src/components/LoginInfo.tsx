@@ -10,12 +10,10 @@ export default function LoginInfo() {
   const { user, updateUser } = useAuthContext();
   const router = useRouter();
 
-  useEffect(() => {}, []);
-
   const handleLogout = () => {
     localStorage.setItem("accessToken", "");
     localStorage.setItem("refreshToken", "");
-    sessionStorage.setItem("accessToken", "");
+    sessionStorage.removeItem("accessToken");
     updateUser(false);
   };
 

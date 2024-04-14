@@ -14,6 +14,7 @@ type Request = {
 
 export default function New({ name }: { name: string }) {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
+  console.log(name);
   const [post, setPost] = useState<Request>({
     title: "",
     description: "",

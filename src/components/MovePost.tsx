@@ -1,5 +1,6 @@
 "use client";
 import { PostInfo } from "@/service/posts";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
@@ -23,27 +24,45 @@ export default function MovePost({
     <section className="flex mx-40 mt-16 rounded-xl overflow-hidden">
       {prev && (
         <div
-          className="bg-gradient-to-l from-neutral-200 to-neutral-100 dark:bg-gradient-to-r dark:from-neutral-950 dark:to-neutral-800 w-full h-28 border-white dark:border-black border-r-4 flex items-center"
+          className="w-full h-28 overflow-hidden border-white dark:border-black border-r-4 flex items-center relative"
           onClick={handelClickPrev}
         >
-          <div className="flex items-center justify-around w-full hover:scale-110">
+          <Image
+            className="w-full opacity-40"
+            src={prev.fileName}
+            alt={prev.title}
+            width={500}
+            height={200}
+          />
+          <div className="flex justify-around w-full hover:scale-110 ease-in-out absolute bottom-6 rigth-6">
             <FaArrowLeft className="w-12 h-12 text-orange-500" />
             <div>
-              <p className="text-xl font-semibold mb-1">{prev.title}</p>
-              <p className="text-sm">{prev.description}</p>
+              <p className="text-xl font-semibold mb-1 text-black">
+                {prev.title}
+              </p>
+              <p className="text-sm text-black">{prev.description}</p>
             </div>
           </div>
         </div>
       )}
       {next && (
         <div
-          className="bg-gradient-to-r from-neutral-200 to-neutral-100 dark:bg-gradient-to-l dark:from-neutral-950 dark:to-neutral-800 w-full h-28 flex items-center"
+          className="w-full h-28 overflow-hidden flex items-center relative"
           onClick={handelClickNext}
         >
-          <div className="flex items-center justify-evenly w-full hover:scale-110 ease-in-out">
+          <Image
+            className="w-full opacity-40"
+            src={next.fileName}
+            alt={next.title}
+            width={500}
+            height={200}
+          />
+          <div className="flex justify-around w-full hover:scale-110 ease-in-out absolute bottom-6 left-6">
             <div>
-              <p className="text-xl font-semibold mb-1">{next.title}</p>
-              <p className="text-sm">{next.description}</p>
+              <p className="text-xl font-semibold mb-1 text-black">
+                {next.title}
+              </p>
+              <p className="text-sm text-black">{next.description}</p>
             </div>
             <FaArrowRight className="w-12 h-12 text-orange-500" />
           </div>

@@ -33,6 +33,7 @@ export default function LoginPage() {
             },
           });
           console.log("member", res.data);
+          console.log(res.data.mid);
           updateUserName(res.data.mid);
         }
         fetchData();
