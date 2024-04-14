@@ -135,7 +135,7 @@ export default function FilterablePosts({ categories }: Props) {
         {!empty &&
           pages.map((item) => (
             <button
-              className={`ml-9`}
+              className={`ml-9 ${page.page === item ? "text-orange-500" : ""}`}
               key={item}
               value={item}
               onClick={handleClick}
