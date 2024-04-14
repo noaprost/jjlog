@@ -33,9 +33,11 @@ export const AuthProvider: React.FC<{
       if (data.data.mid !== "anonymous") {
         console.log("여기");
         setUser(true);
+        setUserName(data.data.mid);
       } else {
         console.log("저기");
         setUser(false);
+        setUserName("");
       }
     });
   }
