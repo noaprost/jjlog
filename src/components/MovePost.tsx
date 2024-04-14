@@ -29,7 +29,7 @@ export default function MovePost({
           <div className="flex items-center justify-around w-full hover:scale-110">
             <FaArrowLeft className="w-12 h-12 text-orange-500" />
             <div>
-              <p className="text-2xl font-semibold mb-1">{prev.title}</p>
+              <p className="text-xl mb-1">{prev.title}</p>
               <p className="text-sm">{prev.description}</p>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function MovePost({
         >
           <div className="flex items-center justify-evenly w-full hover:scale-110 ease-in-out">
             <div>
-              <p className="text-2xl font-semibold mb-1">{next.title}</p>
+              <p className="text-xl mb-1">{next.title}</p>
               <p className="text-sm">{next.description}</p>
             </div>
             <FaArrowRight className="w-12 h-12 text-orange-500" />
