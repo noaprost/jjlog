@@ -31,9 +31,9 @@ export default function PostContent({
   const name = getUserName();
   return (
     <div className="mx-40 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
-      <div className="relative w-full h-64 overflow-hidden">
+      <div className="w-full h-64 overflow-hidden flex items-center">
         <Image
-          className="w-full absolute -top-44"
+          className="w-full"
           src={fileName}
           alt={title}
           width={1400}
