@@ -28,7 +28,7 @@ export default function Home() {
     <div className="p-12">
       <Profile />
       <h1 className="text-2xl font-bold pl-12 mb-6">Featured Posts</h1>
-      <div className="px-8">
+      <div>
         <Slide>
           {featuredList.map((card) => (
             <PostCard
@@ -44,7 +44,7 @@ export default function Home() {
         </Slide>
       </div>
       <h1 className="text-2xl font-bold pl-12 pt-24 mb-6">You may like</h1>
-      <div className="px-8 mb-12">
+      <div className="mb-12">
         <Slide>
           {ymlList.map((card) => (
             <PostCard

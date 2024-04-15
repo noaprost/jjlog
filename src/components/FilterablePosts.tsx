@@ -93,7 +93,7 @@ export default function FilterablePosts({ categories }: Props) {
   };
 
   return (
-    <section>
+    <section className="mx-28">
       <div className="flex">
         {empty && (
           <p className="text-center m-auto text-lg">
@@ -101,9 +101,10 @@ export default function FilterablePosts({ categories }: Props) {
           </p>
         )}
         <div
-          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-${
-            len > 2 ? len : 2
-          } gap-7 py-8 pl-8`}
+          // className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-${
+          //   len > 2 ? len : 2
+          // } gap-7 py-8 ml-8`}
+          className="flex flex-wrap"
         >
           {page.postCard &&
             page.postCard.map((post) => (
@@ -118,13 +119,11 @@ export default function FilterablePosts({ categories }: Props) {
               />
             ))}
         </div>
-        <div className="mx-auto">
-          <Category
-            categories={[ALL_POSTS, ...categories]}
-            selected={selected}
-            onClick={setSelected}
-          />
-        </div>
+        <Category
+          categories={[ALL_POSTS, ...categories]}
+          selected={selected}
+          onClick={setSelected}
+        />
       </div>
       <div className="flex mx-auto w-max justify-between py-12">
         {page.prev && (

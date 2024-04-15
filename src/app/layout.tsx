@@ -33,15 +33,15 @@ export default function RootLayout({
         <AuthProvider>
           <Header />
           <hr />
-          <section>
-            <ul className="flex p-3 justify-center items-center mx-auto">
-              <li className="mr-32 text-xl">
+          <section className="w-full p-3 px-8">
+            <ul className="flex justify-evenly items-center">
+              <li className="text-xl">
                 <Link href="/">home</Link>
               </li>
-              <li className="mr-32 text-xl">
+              <li className="text-xl">
                 <Link href="/posts">posts</Link>
               </li>
-              <li className="mr-32 text-xl">
+              <li className="text-xl">
                 <Link href="/about">about</Link>
               </li>
               <li className="text-xl">

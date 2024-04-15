@@ -26,7 +26,7 @@ export default function PostCard({
   };
   return (
     <div
-      className="flex flex-col w-80 h-80 items-center justify-between bg-neutral-50 dark:bg-neutral-900 p-4 rounded-2xl shadow-customLight dark:shadow-custom cursor-pointer"
+      className="flex flex-col w-80 h-80 items-center justify-between bg-neutral-50 dark:bg-neutral-900 p-4 m-4 rounded-2xl shadow-customLight dark:shadow-custom cursor-pointer"
       onClick={handleClick}
     >
       <Image
