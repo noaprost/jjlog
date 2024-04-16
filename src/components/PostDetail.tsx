@@ -25,8 +25,8 @@ export default function PostDetail({ id }: { id: number }) {
       setData(res.data);
       console.log("post detail", res.data);
     }
-    fetchData();
-  }, []);
+    fetchData().catch((e) => console.log(e));
+  }, [id]);
 
   return (
     <>
