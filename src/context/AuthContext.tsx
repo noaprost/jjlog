@@ -27,7 +27,11 @@ export const AuthProvider: React.FC<{
   async function fetchData() {
     await API.get("/member", {
       headers: {
-        Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+        Authorization: `Bearer ${
+          typeof window !== "undefined"
+            ? sessionStorage.getItem("accessToken")
+            : null
+        }`,
       },
     }).then((data) => {
       if (data.data.mid !== "anonymous") {
