@@ -37,7 +37,7 @@ export default function LoginPage() {
           updateUserName(res.data.mid);
         }
         fetchData();
-        router.push("/");
+        router.back();
       })
       .catch(() => alert("아이디 혹은 비밀번호가 틀립니다."));
   };
