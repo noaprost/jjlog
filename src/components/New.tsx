@@ -1,4 +1,5 @@
 "use client";
+import { useAuthContext } from "@/context/AuthContext";
 import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
@@ -12,9 +13,10 @@ type Request = {
   content: string;
 };
 
-export default function New({ name }: { name: string }) {
+export default function New() {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
-  console.log(name);
+  const { getUserName } = useAuthContext();
+  const name = getUserName();
   const [post, setPost] = useState<Request>({
     title: "",
     description: "",
