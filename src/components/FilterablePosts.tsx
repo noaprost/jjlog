@@ -96,29 +96,26 @@ export default function FilterablePosts({ categories }: Props) {
     <section className="mx-28">
       <div className="flex">
         {empty && (
-          <p className="text-center m-auto text-lg">
+          <p className="text-lg w-11/12 text-center my-48">
             {selected} 카테고리에 포스트가 없습니다😢
           </p>
         )}
-        <div
-          // className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-${
-          //   len > 2 ? len : 2
-          // } gap-7 py-8 ml-8`}
-          className="flex flex-wrap"
-        >
-          {page.postCard &&
-            page.postCard.map((post) => (
-              <PostCard
-                key={post.id}
-                id={post.id}
-                fileName={post.fileName}
-                day={post.day}
-                title={post.title}
-                description={post.description}
-                category={post.category}
-              />
-            ))}
-        </div>
+        {!empty && (
+          <div className="flex flex-wrap w-11/12">
+            {page.postCard &&
+              page.postCard.map((post) => (
+                <PostCard
+                  key={post.id}
+                  id={post.id}
+                  fileName={post.fileName}
+                  day={post.day}
+                  title={post.title}
+                  description={post.description}
+                  category={post.category}
+                />
+              ))}
+          </div>
+        )}
         <Category
           categories={[ALL_POSTS, ...categories]}
           selected={selected}
