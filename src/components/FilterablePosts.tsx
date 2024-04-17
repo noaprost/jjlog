@@ -116,11 +116,13 @@ export default function FilterablePosts({ categories }: Props) {
               ))}
           </div>
         )}
-        <Category
-          categories={[ALL_POSTS, ...categories]}
-          selected={selected}
-          onClick={setSelected}
-        />
+        <div className="ml-12">
+          <Category
+            categories={[ALL_POSTS, ...categories]}
+            selected={selected}
+            onClick={setSelected}
+          />
+        </div>
       </div>
       <div className="flex mx-auto w-max justify-between py-12">
         {page.prev && (
