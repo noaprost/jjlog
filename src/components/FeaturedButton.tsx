@@ -1,9 +1,9 @@
 "use client";
 
 import API from "@/service/axios";
-import { error } from "console";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 export default function FeaturedButton({
   id,
@@ -36,9 +36,18 @@ export default function FeaturedButton({
     fetchData();
   };
   return (
-    <FaStar
-      className={`w-4 h-4 cursor-pointer ${data ? "text-orange-500" : ""}`}
-      onClick={handleClick}
-    />
+    <>
+      {data ? (
+        <FaStar
+          className={"w-5 h-5 cursor-pointer text-orange-500"}
+          onClick={handleClick}
+        />
+      ) : (
+        <FaRegStar
+          className="w-5 h-5 cursor-pointer text-orange-500"
+          onClick={handleClick}
+        />
+      )}
+    </>
   );
 }

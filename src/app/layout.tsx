@@ -34,7 +34,7 @@ export default function RootLayout({
           <Header />
           <hr />
           <section className="w-full p-3 px-8">
-            <ul className="flex justify-evenly items-center">
+            <ul className="flex lg:gap-32 sm:gap-12 gap-8 justify-center items-center">
               <li className="text-xl">
                 <Link href="/">home</Link>
               </li>

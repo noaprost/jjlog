@@ -9,7 +9,5 @@ export default function ModifiyButton({ id }: { id: number }) {
   const handleClick = () => {
     router.push(`/post/modify/${id}`);
   };
-  return (
-    <LuPen className="mr-2 w-4 h-4 cursor-pointer" onClick={handleClick} />
-  );
+  return <LuPen className="w-5 h-5 cursor-pointer" onClick={handleClick} />;
 }
