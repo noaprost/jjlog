@@ -43,7 +43,7 @@ export default function PostContent({
       </div>
       <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
         {name === writer && (
-          <div className="flex justify-end items-center">
+          <div className="flex justify-end items-center gap-3">
             <ModifiyButton id={id} />
             <PostDeleteButton id={id} />
             <FeaturedButton id={id} featured={featured} />
