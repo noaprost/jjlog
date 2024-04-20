@@ -4,6 +4,8 @@ import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Swal from "sweetalert2";
+import ProfileImage from "./ProfileImage";
+import Writer from "./Writer";
 
 type Request = {
   title: string;
@@ -74,7 +76,7 @@ export default function New() {
   };
   return (
     <form
-      className="flex flex-col mt-12 mx-32 px-12 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
+      className="flex flex-col mt-12 mx-40 px-12 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
       onSubmit={handleSubmit}
     >
       <input
@@ -98,7 +100,7 @@ export default function New() {
         value={post.description || ""}
         onChange={handleChange}
       />
-      <p className="mb-8 font-semibold">{post.writer}</p>
+      <Writer writer={post.writer} />
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         required
