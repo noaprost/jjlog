@@ -6,9 +6,9 @@ export default function AboutPage() {
       <div className="w-1/2 flex items-center justify-center">
         <Profile />
       </div>
-      <div className="bg-orange-100 dark:bg-neutral-900 p-3 flex flex-col items-center w-1/2  justify-center rounded-lg">
-        <div className="flex flex-col items-center p-1">
-          <h2 className="font-semibold lg:text-md sm:text-sm text-sm mb-1">
+      <div className="bg-orange-100 dark:bg-neutral-900 p-3 flex flex-col items-center w-1/2 justify-center rounded-lg gap-4">
+        <div className="flex flex-col gap-1 items-center p-1">
+          <h2 className="font-semibold lg:text-lg sm:text-md text-sm mb-1">
             Who are we?
           </h2>
           <p className="lg:text-sm sm:text-xs text-xs">
@@ -18,22 +18,22 @@ export default function AboutPage() {
             취미는 알고리즘 문제 풀기
           </p>
         </div>
-        <div className="flex flex-col items-center p-1">
-          <h2 className="font-semibold lg:text-md sm:text-sm text-sm mb-1">
-            Career
-          </h2>
-          <p className="lg:text-sm sm:text-xs text-xs">인천대학교 졸업</p>
-        </div>
-        <div className="flex flex-col items-center p-1">
-          <h2 className="font-semibold text-md sm:text-sm text-sm mb-1">
+        <div className="flex flex-col gap-1 items-center p-1">
+          <h2 className="font-semibold lg:text-lg sm:text-md text-sm mb-1">
             Skills
           </h2>
           <p className="lg:text-sm sm:text-xs text-xs">
-            Back-end - Java, Spring, JPA
+            Back-end - Spring Boot, MySQL, Java, AWS, Git
           </p>
           <p className="lg:text-sm sm:text-xs text-xs">
-            Front-end - React, Typescript, Next.js
+            Front-end - React, TypeScript, Next.js, React Native
           </p>
+        </div>
+        <div className="flex flex-col items-center p-1">
+          <h2 className="font-semibold lg:text-lg sm:text-md text-sm mb-1">
+            Career
+          </h2>
+          <p className="lg:text-sm sm:text-xs text-xs">인천대학교 졸업</p>
         </div>
       </div>
     </div>
