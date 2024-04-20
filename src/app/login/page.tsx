@@ -46,7 +46,7 @@ export default function LoginPage() {
     <section className="w-full h-screen">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-1/3 h-2/3 justify-center items-center mx-auto bg-orange-400 shadow-customLight dark:shadow-custom rounded-2xl p-6"
+        className="flex flex-col w-1/4 h-2/3 justify-center items-center mx-auto bg-orange-400 shadow-customLight dark:shadow-custom rounded-2xl p-6"
       >
         <label htmlFor="id" className="self-start text-white mb-2">
           아이디
@@ -58,7 +58,7 @@ export default function LoginPage() {
           type="text"
           required
           autoFocus
-          className="w-full mb-6 p-1 rounded-lg"
+          className="w-full mb-6 p-1 rounded-lg text-black"
         />
         <label htmlFor="pass" className="self-start text-white mb-2">
           password
@@ -69,9 +69,12 @@ export default function LoginPage() {
           name="pass"
           type="password"
           required
-          className="w-full mb-6 p-1 rounded-lg"
+          className="w-full mb-6 p-1 rounded-lg text-black"
         />
-        <button type="submit" className="text-white font-semibold text-lg">
+        <button
+          type="submit"
+          className="text-white font-semibold text-lg mt-16"
+        >
           로그인
         </button>
       </form>
