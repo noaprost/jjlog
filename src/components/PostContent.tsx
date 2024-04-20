@@ -29,6 +29,8 @@ export default function PostContent({
 }: Props) {
   const { getUserName } = useAuthContext();
   const name = getUserName();
+
+  window.scrollTo(0, 0);
   return (
     <div className="mx-40 my-6 rounded-2xl overflow-hidden shadow-customLight dark:shadow-custom">
       <div className="w-full h-64 overflow-hidden flex items-center">
