@@ -29,10 +29,10 @@ export default function AboutPage() {
             Skills
           </h2>
           <p className="lg:text-sm sm:text-xs text-xs">
-            김재철 - Java, Spring, JPA
+            Back-end - Java, Spring, JPA
           </p>
           <p className="lg:text-sm sm:text-xs text-xs">
-            강지원 - React, Typescript, Next.js
+            Front-end - React, Typescript, Next.js
           </p>
         </div>
       </div>
