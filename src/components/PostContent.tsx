@@ -41,7 +41,7 @@ export default function PostContent({
           priority
         />
       </div>
-      <div className="px-12 pt-4 pb-8 bg-neutral-100 dark:bg-neutral-900">
+      <div className="px-12 py-8 bg-neutral-100 dark:bg-neutral-900">
         {name === writer && (
           <div className="flex justify-end items-center gap-3">
             <ModifiyButton id={id} />
