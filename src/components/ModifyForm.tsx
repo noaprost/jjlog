@@ -4,6 +4,7 @@ import { PostData } from "@/service/posts";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import Writer from "./Writer";
 
 type Request = {
   title: string;
@@ -80,7 +81,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
   };
   return (
     <form
-      className="flex flex-col mx-16 p-4 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
+      className="flex flex-col mx-40 mt-12 px-12 border-neutral-200 dark:border-neutral-900 border-2 rounded-2xl"
       onSubmit={handleSubmit}
     >
       <input
@@ -104,7 +105,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.description}
         onChange={handleChange}
       />
-      <p className="p-2 mb-4 font-semibold">{post.writer}</p>
+      <Writer writer={post.writer} />
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         type="file"
@@ -136,7 +137,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.content}
         onChange={handleChange}
       />
-      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md text-black">
+      <button className="bg-orange-400 p-3 text-lg font-semibold rounded-md text-black mb-8">
         수정하기
       </button>
     </form>

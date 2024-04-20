@@ -41,7 +41,7 @@ export default function PostContent({
           priority
         />
       </div>
-      <div className="p-8 bg-neutral-100 dark:bg-neutral-900">
+      <div className="px-12 pt-4 pb-8 bg-neutral-100 dark:bg-neutral-900">
         {name === writer && (
           <div className="flex justify-end items-center gap-3">
             <ModifiyButton id={id} />
@@ -50,17 +50,19 @@ export default function PostContent({
           </div>
         )}
 
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-end mt-3">
           <FaRegCalendarAlt className="text-orange-500 dark:text-orange-300 mr-2" />
           <p className="text-end text-sm text-orange-500 dark:text-orange-300">
             {day}
           </p>
         </div>
         <h1 className="font-bold text-2xl my-7">{title}</h1>
-        <p className="text-sm mb-1">{description}</p>
-        <div className="flex flex-row justify-between">
-          <div className="w-28 h-1 bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900 mt-2"></div>
-          <p className="text-md font-semibold mx-4">{writer}</p>
+        <p className="text-md mb-2 text-neutral-700 dark:text-neutral-300">
+          {description}
+        </p>
+        <div className="flex flex-row justify-between mb-16">
+          <div className="w-44 h-1 bg-gradient-to-r from-orange-500 to-orange-300 dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-900"></div>
+          <p className="text-md font-semibold">{writer}</p>
         </div>
         <div className="w-full">
           <MarkDownViewer content={content} />
