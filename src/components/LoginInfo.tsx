@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import ProfileImage from "./ProfileImage";
-import DarkModeToggleButton from "./DarkModeToggleButton";
-import WriteButton from "./WriteButton";
+import DarkModeToggleButton from "./ui/button/DarkModeToggleButton";
+import WriteButton from "./ui/button/WriteButton";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/AuthContext";
 

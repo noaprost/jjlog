@@ -1,8 +1,8 @@
 import { FaRegCalendarAlt } from "react-icons/fa";
-import ModifiyButton from "./ModifiyButton";
+import ModifiyButton from "./ui/button/ModifiyButton";
 import MarkDownViewer from "./MarkDownViewer";
-import FeaturedButton from "./FeaturedButton";
-import PostDeleteButton from "./PostDeleteButton";
+import FeaturedButton from "./ui/button/FeaturedButton";
+import PostDeleteButton from "./ui/button/PostDeleteButton";
 import Image from "next/image";
 import { useAuthContext } from "@/context/AuthContext";
 

@@ -2,7 +2,7 @@
 import API from "@/service/axios";
 import { PostData } from "@/service/posts";
 import React, { useEffect, useState } from "react";
-import ModifyForm from "./ModifyForm";
+import ModifyForm from "./ui/form/ModifyForm";
 
 export default function Modify({ id }: { id: number }) {
   const [data, setData] = useState<PostData>({

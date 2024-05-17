@@ -4,7 +4,7 @@ import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Swal from "sweetalert2";
-import Writer from "./Writer";
+import Writer from "../../Writer";
 
 type Request = {
   title: string;
@@ -14,7 +14,7 @@ type Request = {
   content: string;
 };
 
-export default function New() {
+export default function NewForm() {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const { getUserName } = useAuthContext();
   const name = getUserName();

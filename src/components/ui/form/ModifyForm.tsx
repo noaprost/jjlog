@@ -4,7 +4,7 @@ import { PostData } from "@/service/posts";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import Writer from "./Writer";
+import Writer from "../../Writer";
 
 type Request = {
   title: string;
