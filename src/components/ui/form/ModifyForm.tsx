@@ -17,7 +17,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const { id, title, description, category, content, writer } = post;
   const router = useRouter();
-  
+
   const [modifyPost, setModifyPost] = useState<Request>({
     title: "",
     description: "",
@@ -36,8 +36,8 @@ export default function ModifyForm({ post }: { post: PostData }) {
   }, [title, description, category, content]);
 
   const [file, setFile] = useState<File | null>(null);
-  
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (isSubmit) {
       return;

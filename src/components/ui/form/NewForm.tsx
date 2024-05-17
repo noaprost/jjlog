@@ -31,8 +31,8 @@ export default function NewForm() {
   const { title, description, writer, category, content } = post;
 
   const [file, setFile] = useState<File | null>();
-  
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (isSubmit) {
       return;
