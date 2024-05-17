@@ -14,6 +14,10 @@ type Request = {
 };
 
 export default function ModifyForm({ post }: { post: PostData }) {
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
+  const { id, title, description, category, content, writer } = post;
+  const router = useRouter();
+  
   const [modifyPost, setModifyPost] = useState<Request>({
     title: "",
     description: "",
@@ -24,17 +28,20 @@ export default function ModifyForm({ post }: { post: PostData }) {
   useEffect(() => {
     setModifyPost((mpost) => ({
       ...mpost,
-      title: post.title,
-      description: post.description,
-      category: post.category,
-      content: post.content,
+      title: title,
+      description: description,
+      category: category,
+      content: content,
     }));
-  }, [post.title, post.description, post.category, post.content]);
+  }, [title, description, category, content]);
 
   const [file, setFile] = useState<File | null>(null);
-  const router = useRouter();
+  
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmit) {
+      return;
+    }
     async function fetchData() {
       const formData = new FormData();
       if (file === undefined) {
@@ -46,13 +53,14 @@ export default function ModifyForm({ post }: { post: PostData }) {
         new Blob([JSON.stringify(modifyPost)], { type: "application/json" })
       );
 
-      API.put(`/posts/${post.id}`, formData, {
+      API.put(`/posts/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
     }
+    setIsSubmit(true);
     fetchData()
       .then(() => {
         Swal.fire({
@@ -63,9 +71,10 @@ export default function ModifyForm({ post }: { post: PostData }) {
           width: "400px",
           timer: 1000,
         });
+        setIsSubmit(false);
         router.back();
       })
-      .catch((e) => alert(`수정 실패 :  ${e}`));
+      .catch((e) => alert(`글 수정에 실패했습니다. Error :  ${e}`));
   };
   const handleChange = (
     e: ChangeEvent<HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement>
@@ -103,7 +112,7 @@ export default function ModifyForm({ post }: { post: PostData }) {
         value={modifyPost.description}
         onChange={handleChange}
       />
-      <Writer writer={post.writer} />
+      <Writer writer={writer} />
       <input
         className="p-2 mb-8 border dark:border-2 border-neutral-200 dark:border-neutral-800 outline-neutral-300 dark:outline-neutral-900 outline-offset-1 rounded-md dark:bg-neutral-900"
         type="file"
