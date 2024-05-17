@@ -23,7 +23,6 @@ export default function PostDetail({ id }: { id: number }) {
     async function fetchData() {
       const res = await API.get(`/posts/${id}`);
       setData(res.data);
-      console.log("post detail", res.data);
     }
     fetchData().catch((e) => console.log(e));
   }, [id]);

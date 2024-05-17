@@ -11,7 +11,7 @@ const inter = Roboto({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "jjblog",
-  description: "my blog!",
+  description: "This is our blog!",
 };
 
 <Head>
@@ -26,27 +26,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const menu = ["home", "posts", "about", "contact"];
   return (
     <html lang="en">
-      <head></head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} vsc-initialized`}
+        suppressHydrationWarning={true}
+      >
         <AuthProvider>
           <Header />
           <hr />
           <section className="w-full p-3 px-8">
             <ul className="flex lg:gap-32 sm:gap-12 gap-8 justify-center items-center">
-              <li className="text-xl">
-                <Link href="/">home</Link>
-              </li>
-              <li className="text-xl">
-                <Link href="/posts">posts</Link>
-              </li>
-              <li className="text-xl">
-                <Link href="/about">about</Link>
-              </li>
-              <li className="text-xl">
-                <Link href="/contact">contact</Link>
-              </li>
+              {menu.map((text) => (
+                <li key={text} className="text-xl">
+                  <Link href={`/${text !== "home" ? text : ""}`}>{text}</Link>
+                </li>
+              ))}
             </ul>
           </section>
           <hr />

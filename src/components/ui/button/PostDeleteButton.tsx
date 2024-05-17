@@ -21,12 +21,12 @@ export default function PostDeleteButton({ id }: { id: number }) {
       });
 
       if (result.isConfirmed) {
-        const res = await API.delete(`/posts/${id}`, {
+        API.delete(`/posts/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           },
         });
-        console.log("post 삭제", res.data);
+
         Swal.fire({
           text: "삭제가 완료되었습니다.",
           icon: "success",

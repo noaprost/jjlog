@@ -1,6 +1,6 @@
 "use client";
-import New from "@/components/New";
+import NewForm from "@/components/ui/form/NewForm";
 
 export default function NewPostPage() {
-  return <New />;
+  return <NewForm />;
 }

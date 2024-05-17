@@ -1,5 +1,4 @@
 "use client";
-
 import { sendContactEmail } from "@/service/contact";
 import { ChangeEvent, FormEvent, useState } from "react";
 
@@ -24,7 +23,7 @@ export default function EmailForm() {
   const [form, setForm] = useState<Form>(DEFAULT_DATA);
   const [banner, setBanner] = useState<Banner | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     sendContactEmail(form)
       .then(() => {
@@ -53,7 +52,7 @@ export default function EmailForm() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
-  
+
   return (
     <>
       {banner && (

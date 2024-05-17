@@ -18,7 +18,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// 외부에서 이용할 수 있는 함수
 export async function sendEmail({ email, subject, message }: EmailData) {
   const mailData = {
     from: email,

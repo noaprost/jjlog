@@ -1,4 +1,4 @@
-import ContactButton from "./ContactButton";
+import ContactButton from "./ui/button/ContactButton";
 import ProfileImage from "./ProfileImage";
 
 export default function Profile() {

@@ -1,4 +1,4 @@
-import EmailForm from "@/components/EmailForm";
+import EmailForm from "@/components/ui/form/EmailForm";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 

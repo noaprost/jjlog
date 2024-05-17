@@ -11,8 +11,8 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({
   user: false,
-  updateUser: (user) => {},
-  updateUserName: (user) => {},
+  updateUser: (user: boolean) => {},
+  updateUserName: (name: string) => {},
   getUserName: () => {
     return "";
   },
