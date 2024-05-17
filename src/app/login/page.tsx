@@ -1,5 +1,4 @@
 "use client";
-
 import { useAuthContext } from "@/context/AuthContext";
 import API from "@/service/axios";
 import { getTokenAPI } from "@/service/token";
@@ -32,8 +31,6 @@ export default function LoginPage() {
               Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
             },
           });
-          console.log("member", res.data);
-          console.log(res.data.mid);
           updateUserName(res.data.mid);
         }
         fetchData();

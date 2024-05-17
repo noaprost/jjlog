@@ -1,5 +1,4 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 
 export default function ContactButton() {
@@ -9,7 +8,7 @@ export default function ContactButton() {
       className="bg-orange-400 py-1 px-2 rounded-xl text-black text-sm"
       onClick={() => router.push("/contact")}
     >
-      Contact us
+      Contact Us
     </button>
   );
 }

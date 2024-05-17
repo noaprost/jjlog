@@ -16,7 +16,6 @@ export default function Home() {
     async function fetchData() {
       const res = await API.get("/home");
       setData(res.data);
-      console.log("home", res.data);
     }
     fetchData();
   }, []);

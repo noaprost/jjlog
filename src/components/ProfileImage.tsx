@@ -15,6 +15,7 @@ export default function ProfileImage({
       width={width}
       height={height}
       className="rounded-full"
+      priority
     />
   );
 }

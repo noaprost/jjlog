@@ -11,11 +11,10 @@ export async function POST(request: Request) {
   const body = await request.json();
   if (!bodySchema.isValidSync(body)) {
     return new Response(JSON.stringify({ message: "유효하지 않은 포맷" }), {
-      status: 400, // bad request
+      status: 400,
     });
   }
 
-  // 노드 메일러를 이용해서 메일을 전송
   return sendEmail(body)
     .then(
       () =>
@@ -26,7 +25,7 @@ export async function POST(request: Request) {
     .catch((error) => {
       console.error(error);
       return new Response(JSON.stringify({ message: "메일 전송에 실패함" }), {
-        status: 500, // 서버 내부에서 문제가 있어서 전송에 실패했기 때문에 internal error로 보내줌
+        status: 500,
       });
     });
 }

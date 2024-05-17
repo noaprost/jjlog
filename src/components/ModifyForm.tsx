@@ -46,13 +46,12 @@ export default function ModifyForm({ post }: { post: PostData }) {
         new Blob([JSON.stringify(modifyPost)], { type: "application/json" })
       );
 
-      const res = await API.put(`/posts/${post.id}`, formData, {
+      API.put(`/posts/${post.id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
-      console.log(res.data);
     }
     fetchData()
       .then(() => {
@@ -73,7 +72,6 @@ export default function ModifyForm({ post }: { post: PostData }) {
   ) => {
     const { name, value, files } = e.target;
     if (name === "file") {
-      console.log(files && files[0]);
       setFile(files ? files[0] : null);
       return;
     }

@@ -4,7 +4,6 @@ import API from "@/service/axios";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Swal from "sweetalert2";
-import ProfileImage from "./ProfileImage";
 import Writer from "./Writer";
 
 type Request = {
@@ -47,7 +46,6 @@ export default function New() {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
-      console.log("new", res.data);
     }
     setIsSubmit(true);
     fetchData().then(() => {

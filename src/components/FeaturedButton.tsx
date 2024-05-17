@@ -1,5 +1,4 @@
 "use client";
-
 import API from "@/service/axios";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
@@ -27,7 +26,6 @@ export default function FeaturedButton({
       })
         .then((resp) => {
           setData(resp.data);
-          console.log("featured button", resp);
         })
         .catch(() => {
           alert("핀 개수를 초과하였습니다 (최대 8개)");

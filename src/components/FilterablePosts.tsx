@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 import Category from "./Category";
@@ -48,7 +47,6 @@ export default function FilterablePosts({ categories }: Props) {
         setEmpty(false);
         setprevCategory(selected);
         setPage(res.data);
-        console.log("post", res.data);
       } else {
         const res = await API.get(`/list?page=${clicked}&category=${selected}`);
         if (res.data.page === 0) {
@@ -60,13 +58,10 @@ export default function FilterablePosts({ categories }: Props) {
           setprevCategory(selected);
           setPage(res.data);
         }
-        console.log("post", res.data);
       }
     }
     fetchData();
   }, [clicked, selected, prevCategory]);
-
-  const len = Math.ceil(page.postCard ? page.postCard.length / 3 : 0);
 
   let pages: number[] = [];
   for (let i = page.start; i <= page.end; i++) {
