@@ -14,7 +14,6 @@ type Request = {
 };
 
 export default function ModifyForm({ post }: { post: PostData }) {
-  const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const { id, title, description, category, content, writer } = post;
   const router = useRouter();
 
@@ -39,9 +38,6 @@ export default function ModifyForm({ post }: { post: PostData }) {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (isSubmit) {
-      return;
-    }
     async function fetchData() {
       const formData = new FormData();
       if (file === undefined) {
@@ -60,7 +56,6 @@ export default function ModifyForm({ post }: { post: PostData }) {
         },
       });
     }
-    setIsSubmit(true);
     fetchData()
       .then(() => {
         Swal.fire({
@@ -71,7 +66,6 @@ export default function ModifyForm({ post }: { post: PostData }) {
           width: "400px",
           timer: 1000,
         });
-        setIsSubmit(false);
         router.back();
       })
       .catch((e) => alert(`글 수정에 실패했습니다. Error :  ${e}`));
