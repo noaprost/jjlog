@@ -125,7 +125,6 @@ export default function NewForm() {
           value={category}
           onChange={handleChange}
         >
-          <option selected>frontend</option>
           <option>backend</option>
           <option>algorithm</option>
           <option>study</option>
