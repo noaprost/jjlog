@@ -34,11 +34,13 @@ export default function MovePost({
             width={500}
             height={200}
           />
-          <div className="flex justify-around w-full hover:scale-110 ease-in-out absolute bottom-6 rigth-6">
+          <div className="flex justify-around w-full hover:scale-110 ease-in-out absolute bottom-6 rigth-6 items-center">
             <FaArrowLeft className="w-12 h-12 text-orange-500" />
             <div>
-              <p className="text-xl font-semibold mb-1">{prev.title}</p>
-              <p className="text-sm">{prev.description}</p>
+              <p className="text-xl font-semibold truncate mb-1">
+                {prev.title}
+              </p>
+              <p className="text-sm truncate w-96">{prev.description}</p>
             </div>
           </div>
         </div>
