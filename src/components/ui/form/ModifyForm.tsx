@@ -14,6 +14,7 @@ type Request = {
 };
 
 export default function ModifyForm({ post }: { post: PostData }) {
+
   const { id, title, description, category, content, writer } = post;
   const router = useRouter();
 
