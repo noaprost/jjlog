@@ -26,7 +26,7 @@ export default function AboutPage() {
             Back-end - Spring Boot, MySQL, Java, AWS, Git
           </p>
           <p className="lg:text-sm sm:text-xs text-xs">
-            Front-end - React, TypeScript, Next.js, React Native
+            Front-end - React, Typescript, Next.js, Three.js, Git
           </p>
         </div>
         <div className="flex flex-col items-center p-1">
