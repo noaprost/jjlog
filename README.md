@@ -14,7 +14,7 @@
 
 ### 관리자 모드
 
-- 글 등록, 글 삭제 기능
+- 글 등록, 수정, 삭제 기능
 
 
 <img src="https://github.com/user-attachments/assets/059bb1b3-ce6f-4854-bb25-3dd34fd7c9ba" width="70%"/>
